@@ -1,14 +1,15 @@
 import Navbar from './Navbar/Navbar';
-import Hero from './Hero/Hero';
+import Intro from './Intro/Intro';
+import About from './About/About';
 
 function App() {
   return (
     <div>
       <Navbar />
-      <Hero />
+      <Intro />
+      <About />
 
-      {/* Placeholder sections — we'll build these in the next steps! */}
-      <section id="about" className="section" />
+      {/* Placeholder sections — we'll build these next */}
       <section id="projects" className="section" />
       <section id="skills" className="section" />
       <section id="contact" className="section" />

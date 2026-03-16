@@ -1,20 +1,48 @@
-/* CSS VARIABLES  */
+/* ===========================
+   DESIGN TOKENS
+   =========================== */
 :root {
-  --bg: #0a0a0f;
-  --bg-card: #111118;
-  --bg-card-hover: #16161f;
-  --accent: #00e5a0;
-  --accent-dim: rgba(0, 229, 160, 0.1);
-  --accent-glow: rgba(0, 229, 160, 0.25);
-  --text: #e8e8ed;
-  --text-dim: #7a7a8e;
-  --text-mid: #a0a0b5;
-  --border: #1e1e2a;
-  --font-display: 'Space Mono', monospace;
-  --font-body: 'Outfit', sans-serif;
+  /* Core palette — deep navy-ink with violet accents */
+  --bg:            #0b0b14;
+  --bg-subtle:     #10101c;
+  --bg-card:       rgba(255, 255, 255, 0.035);
+  --bg-card-hover: rgba(255, 255, 255, 0.06);
+
+  /* Glass surface */
+  --glass:         rgba(255, 255, 255, 0.04);
+  --glass-border:  rgba(255, 255, 255, 0.07);
+  --glass-blur:    16px;
+
+  /* Accent — soft lavender & cyan complement */
+  --accent:        #a78bfa;
+  --accent-soft:   rgba(167, 139, 250, 0.12);
+  --accent-glow:   rgba(167, 139, 250, 0.2);
+  --accent-alt:    #67e8f9;
+  --accent-alt-soft: rgba(103, 232, 249, 0.1);
+
+  /* Text hierarchy */
+  --text:          #ededf0;
+  --text-mid:      #8e8ea0;
+  --text-dim:      #5a5a6e;
+
+  /* Borders */
+  --border:        rgba(255, 255, 255, 0.06);
+  --border-accent: rgba(167, 139, 250, 0.15);
+
+  /* Fonts */
+  --font-display:  'Space Mono', monospace;
+  --font-body:     'Outfit', sans-serif;
+
+  /* Radii */
+  --radius-sm:  8px;
+  --radius-md:  14px;
+  --radius-lg:  20px;
+  --radius-xl:  28px;
 }
 
-/* RESET */
+/* ===========================
+   RESET
+   =========================== */
 *,
 *::before,
 *::after {
@@ -36,6 +64,7 @@ body {
   line-height: 1.6;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 a {
@@ -43,28 +72,45 @@ a {
   color: inherit;
 }
 
+::selection {
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
 /* ===========================
-   UTILITY CLASSES
+   GLASS UTILITY
+   =========================== */
+.glass {
+  background: var(--glass);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+}
+
+/* ===========================
+   SECTION UTILITIES
    =========================== */
 .section {
-  max-width: 900px;
+  max-width: 920px;
   margin: 0 auto;
-  padding: 5rem 2rem;
+  padding: 6rem 2rem;
 }
 
 .section-label {
   font-family: var(--font-display);
-  font-size: 0.78rem;
+  font-size: 0.72rem;
   color: var(--accent);
-  letter-spacing: 1.5px;
+  letter-spacing: 2px;
   text-transform: uppercase;
   margin-bottom: 0.75rem;
+  opacity: 0.8;
 }
 
 .section-title {
   font-family: var(--font-body);
-  font-size: 2rem;
+  font-size: 2.1rem;
   font-weight: 700;
   color: var(--text);
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
+  letter-spacing: -0.5px;
 }

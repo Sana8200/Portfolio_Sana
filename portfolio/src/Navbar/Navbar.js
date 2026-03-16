@@ -14,7 +14,7 @@ function Navbar() {
 
   return (
     <nav className={`navbar ${scrolled ? 'navbar--scrolled' : ''}`}>
-      <a href="#hero" className="navbar__logo">
+      <a href="#intro" className="navbar__logo">
         {'<SM />'}
       </a>
 
