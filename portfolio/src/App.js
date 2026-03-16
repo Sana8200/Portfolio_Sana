@@ -1,23 +1,17 @@
-
-import './App.css';
+import Navbar from './Navbar/Navbar';
+import Hero from './Hero/Hero';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Navbar />
+      <Hero />
+
+      {/* Placeholder sections — we'll build these in the next steps! */}
+      <section id="about" className="section" />
+      <section id="projects" className="section" />
+      <section id="skills" className="section" />
+      <section id="contact" className="section" />
     </div>
   );
 }
