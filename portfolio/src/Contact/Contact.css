@@ -15,13 +15,13 @@
 
 .contact__title {
   font-family: var(--font-heading);
-  font-size: 3.2rem;
+  font-size: 3rem;
   font-weight: 400;
   margin-bottom: 1.25rem;
   letter-spacing: -0.5px;
 }
 .contact__title em {
-  color: var(--mauve);
+  color: var(--rust);
   font-style: italic;
 }
 
