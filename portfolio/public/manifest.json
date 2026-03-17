@@ -1,0 +1,8 @@
+{
+  "short_name": "Sana Portfolio",
+  "name": "Sana Monhaseri — Portfolio",
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#FAF6F1",
+  "background_color": "#FAF6F1"
+}

@@ -1,6 +1,4 @@
-/* ===========================
-   INTRO SECTION
-   =========================== */
+/* INTRO SECTION */
 .intro {
   min-height: 100vh;
   display: flex;
@@ -65,7 +63,7 @@
   }
 }
 
-/* Badge — glass pill */
+/* Badge â€” glass pill */
 .intro__badge {
   display: inline-flex;
   align-items: center;

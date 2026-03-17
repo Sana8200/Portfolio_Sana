@@ -12,7 +12,7 @@
   align-items: start;
 }
 
-/* Left column — prose */
+/* Left column â€” prose */
 .about__text p {
   color: var(--text-mid);
   font-size: 1.05rem;
@@ -35,7 +35,7 @@
   font-weight: 500;
 }
 
-/* Right column — glass info cards */
+/* Right column â€” glass info cards */
 .about__cards {
   display: flex;
   flex-direction: column;
