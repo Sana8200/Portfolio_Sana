@@ -1,44 +1,45 @@
-/* -------------------------------------------------------
-   MARQUEE
-   ------------------------------------------------------- */
-
-.marquee-section {
-  padding: 2rem 0;
+.tape {
+  padding: 1.5rem 0;
   overflow: hidden;
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
   background: var(--bg-warm);
 }
 
-.marquee {
+.tape__track {
   display: flex;
   width: max-content;
-  animation: marqueeScroll 40s linear infinite;
+  animation: scroll 45s linear infinite;
 }
-.marquee:hover {
+.tape:hover .tape__track {
   animation-play-state: paused;
 }
-@keyframes marqueeScroll {
+@keyframes scroll {
   to { transform: translateX(-50%); }
 }
 
-.marquee__item {
-  padding: 8px 22px;
-  margin: 0 5px;
-  border-radius: var(--radius-pill);
-  font-size: 0.82rem;
+.tape__item {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 1.75rem;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
   font-weight: 500;
+  color: var(--text-mid);
   white-space: nowrap;
-  border: 1px solid var(--border);
-  background: var(--bg-card);
-  transition: all 0.2s;
+  letter-spacing: 0.3px;
+  transition: color 0.2s;
 }
-.marquee__item:hover { transform: scale(1.05); }
+.tape__item:hover {
+  color: var(--rust);
+}
 
-/* Color variants */
-.marquee__item--rust    { color: var(--rust);     border-color: var(--rust-mid);  background: var(--rust-soft); }
-.marquee__item--sage    { color: var(--sage);     border-color: var(--sage-mid);  background: var(--sage-soft); }
-.marquee__item--mauve   { color: var(--mauve);    border-color: var(--mauve-mid); background: var(--mauve-soft); }
-.marquee__item--amber   { color: var(--amber);    border-color: var(--amber-mid); background: var(--amber-soft); }
-.marquee__item--teal    { color: var(--teal);     border-color: var(--teal-mid);  background: var(--teal-soft); }
-.marquee__item--default { color: var(--text-mid); }
+.tape__dot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--rust);
+  opacity: 0.4;
+  flex-shrink: 0;
+}
