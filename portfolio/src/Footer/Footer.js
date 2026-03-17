@@ -6,7 +6,7 @@ function Footer() {
       <div className="footer__inner">
         <p className="footer__left">
           <span className="footer__name">sana/monhaseri</span>
-          <span className="footer__year">2025</span>
+          <span className="footer__year">{new Date().getFullYear()}</span>
         </p>
         <p className="footer__right">Designed & built with care</p>
       </div>
