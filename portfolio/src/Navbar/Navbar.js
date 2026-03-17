@@ -7,23 +7,22 @@ function Navbar() {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 40);
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    const onScroll = () => setScrolled(window.scrollY > 40);
+    window.addEventListener('scroll', onScroll);
+    return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
   return (
-    <nav className={`navbar ${scrolled ? 'navbar--scrolled' : ''}`}>
-      <a href="#intro" className="navbar__logo">
-        {'<SM />'}
-      </a>
-
-      <div className="navbar__links">
-        {NAV_LINKS.map((link) => (
-          <a key={link} href={`#${link.toLowerCase()}`} className="navbar__link">
-            {link}
-          </a>
-        ))}
+    <nav className={`nav ${scrolled ? 'nav--scrolled' : ''}`}>
+      <div className="nav__inner">
+        <a href="#hero" className="nav__logo">
+          sana<span className="nav__logo-accent">/</span>monhaseri
+        </a>
+        <div className="nav__links">
+          {NAV_LINKS.map((l) => (
+            <a key={l} href={`#${l.toLowerCase()}`} className="nav__link">{l.toLowerCase()}</a>
+          ))}
+        </div>
       </div>
     </nav>
   );

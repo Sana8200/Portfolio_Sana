@@ -1,0 +1,45 @@
+.tape {
+  padding: 1.5rem 0;
+  overflow: hidden;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  background: var(--bg-warm);
+}
+
+.tape__track {
+  display: flex;
+  width: max-content;
+  animation: scroll 45s linear infinite;
+}
+.tape:hover .tape__track {
+  animation-play-state: paused;
+}
+@keyframes scroll {
+  to { transform: translateX(-50%); }
+}
+
+.tape__item {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 1.75rem;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--text-mid);
+  white-space: nowrap;
+  letter-spacing: 0.3px;
+  transition: color 0.2s;
+}
+.tape__item:hover {
+  color: var(--rust);
+}
+
+.tape__dot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--rust);
+  opacity: 0.4;
+  flex-shrink: 0;
+}
