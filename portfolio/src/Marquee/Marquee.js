@@ -1,26 +1,20 @@
 import './Marquee.css';
 
-const SKILLS = [
-  'Java', 'C', 'Python', 'JavaScript', 'React', 'Node.js', 'HTML/CSS',
-  'SQL', 'Assembly', 'Docker', 'Git', 'Firebase',
-  'Linux', 'REST APIs', 'Digital Design',
-  'Data Structures', 'Algorithms', 'OOP', 'CI/CD', 'Concurrency',
+const ITEMS = [
+  'Java', 'C', 'Python', 'JavaScript', 'React', 'Node.js',
+  'HTML/CSS', 'SQL', 'Assembly', 'Docker', 'Git', 'Firebase',
+  'Linux', 'REST APIs', 'Digital Design', 'Algorithms', 'OOP', 'CI/CD',
 ];
 
-const COLORS = ['rust', 'sage', 'mauve', 'amber', 'teal', 'default'];
-
 function Marquee() {
-  const items = [...SKILLS, ...SKILLS];
+  const doubled = [...ITEMS, ...ITEMS];
 
   return (
-    <div className="marquee-section">
-      <div className="marquee">
-        {items.map((s, i) => (
-          <span
-            key={i}
-            className={`marquee__item marquee__item--${COLORS[i % COLORS.length]}`}
-          >
-            {s}
+    <div className="tape">
+      <div className="tape__track">
+        {doubled.map((item, i) => (
+          <span key={i} className="tape__item">
+            <span className="tape__dot" />{item}
           </span>
         ))}
       </div>
