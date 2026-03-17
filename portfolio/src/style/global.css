@@ -1,88 +1,71 @@
 /* ======================================================
-   PORTFOLIO — Global Styles (base only)
-   
-   1. Fonts & Variables
-   2. Reset & Base
-   3. Layout Helpers
-   4. Buttons
-   5. Section Helpers
-   6. Scroll Animations
+   PORTFOLIO — Global Styles
+   Aesthetic: Warm Terminal Elegance
    ====================================================== */
 
-
-/* -------------------------------------------------------
-   1. FONTS & VARIABLES
-   ------------------------------------------------------- */
-
-@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Manrope:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist+Mono:wght@400;500&display=swap');
 
 :root {
-  /* Background */
-  --bg:             #FAF6F1;
-  --bg-warm:        #F3EDE5;
-  --bg-card:        #FFFFFF;
-  --bg-card-alt:    #F8F3ED;
+  --bg:             #F5EDE4;
+  --bg-warm:        #EDE3D7;
+  --bg-card:        #FBF7F2;
+  --bg-card-alt:    #F0E8DE;
+
+  /* Richer tinted section backgrounds */
+  --bg-rust:        #F7EBE3;
+  --bg-sage:        #E8EDE4;
+  --bg-mauve:       #EDE6EF;
+  --bg-teal:        #E4EDEB;
+  --bg-amber:       #F2ECDE;
 
   /* Core palette */
   --rust:           #C0623A;
-  --rust-soft:      rgba(192, 98, 58, 0.08);
-  --rust-mid:       rgba(192, 98, 58, 0.15);
+  --rust-soft:      rgba(192, 98, 58, 0.12);
+  --rust-mid:       rgba(192, 98, 58, 0.22);
   --coral:          #E07B6A;
-  --sage:           #6B7F5E;
-  --sage-soft:      rgba(107, 127, 94, 0.09);
-  --sage-mid:       rgba(107, 127, 94, 0.16);
-  --mauve:          #9B7B9E;
-  --mauve-soft:     rgba(155, 123, 158, 0.09);
-  --mauve-mid:      rgba(155, 123, 158, 0.16);
-  --amber:          #C49A3C;
-  --amber-soft:     rgba(196, 154, 60, 0.09);
-  --amber-mid:      rgba(196, 154, 60, 0.16);
-  --teal:           #5A9E96;
-  --teal-soft:      rgba(90, 158, 150, 0.09);
-  --teal-mid:       rgba(90, 158, 150, 0.16);
-  --rose:           #C47A8A;
-  --peach:          #E8A87C;
+  --sage:           #5E7250;
+  --sage-soft:      rgba(94, 114, 80, 0.12);
+  --sage-mid:       rgba(94, 114, 80, 0.22);
+  --mauve:          #8E6B92;
+  --mauve-soft:     rgba(142, 107, 146, 0.12);
+  --mauve-mid:      rgba(142, 107, 146, 0.22);
+  --amber:          #B8892E;
+  --amber-soft:     rgba(184, 137, 46, 0.12);
+  --amber-mid:      rgba(184, 137, 46, 0.22);
+  --teal:           #4A8E85;
+  --teal-soft:      rgba(74, 142, 133, 0.12);
+  --teal-mid:       rgba(74, 142, 133, 0.22);
+  --rose:           #B86B7A;
+  --peach:          #E09A6E;
 
   /* Neutrals */
-  --charcoal:       #3A322D;
+  --charcoal:       #2C2520;
   --brown:          #8B5E3C;
   --sand:           #C4AD8F;
   --text:           #2E2723;
-  --text-mid:       #7A6E65;
-  --text-dim:       #A89E95;
-  --border:         #E8E0D6;
-  --border-hover:   #D4C8BA;
+  --text-mid:       #6B5F56;
+  --text-dim:       #9A8E84;
+  --border:         #DDD4C8;
+  --border-hover:   #C9BBA9;
 
   /* Typography */
-  --font-heading:   'DM Serif Display', Georgia, serif;
-  --font-body:      'Manrope', -apple-system, sans-serif;
-  --font-mono:      'JetBrains Mono', monospace;
+  --font-heading:   'Instrument Serif', Georgia, serif;
+  --font-body:      -apple-system, 'Segoe UI', sans-serif;
+  --font-mono:      'Geist Mono', monospace;
 
   /* Spacing & Radius */
-  --radius:         16px;
-  --radius-sm:      10px;
-  --radius-lg:      24px;
+  --radius:         12px;
+  --radius-sm:      8px;
+  --radius-lg:      20px;
   --radius-pill:    999px;
 
   /* Shadows */
-  --shadow:         0 2px 12px rgba(46, 39, 35, 0.04);
-  --shadow-hover:   0 8px 30px rgba(46, 39, 35, 0.08);
+  --shadow:         0 1px 4px rgba(46,39,35,0.06), 0 2px 6px rgba(46,39,35,0.03);
+  --shadow-hover:   0 12px 40px rgba(46,39,35,0.10);
 }
 
-
-/* -------------------------------------------------------
-   2. RESET & BASE
-   ------------------------------------------------------- */
-
-*, *::before, *::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-}
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior: smooth; }
 
 body {
   background: var(--bg);
@@ -94,73 +77,68 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-img {
-  display: block;
-  max-width: 100%;
-}
+a { text-decoration: none; color: inherit; }
+img { display: block; max-width: 100%; }
 
 ::selection {
-  background: var(--rust-soft);
-  color: var(--rust);
+  background: var(--rust-mid);
+  color: var(--charcoal);
 }
 
-/* Subtle grain texture overlay */
+/* Subtle grain texture */
 body::after {
   content: '';
   position: fixed;
   inset: 0;
   pointer-events: none;
   z-index: 9999;
-  opacity: 0.025;
+  opacity: 0.03;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   background-size: 200px;
 }
 
-
-/* -------------------------------------------------------
-   3. LAYOUT HELPERS
-   ------------------------------------------------------- */
-
 .container {
-  max-width: 1100px;
+  max-width: 1080px;
   margin: 0 auto;
   padding: 0 2rem;
 }
 
+/* Dot-grid background utility */
+.dot-grid {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.5;
+  background-image: radial-gradient(circle, var(--border) 1px, transparent 1px);
+  background-size: 24px 24px;
+  mask-image: radial-gradient(ellipse 70% 60% at 50% 50%, black 20%, transparent 70%);
+  -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 50%, black 20%, transparent 70%);
+}
 
-/* -------------------------------------------------------
-   4. BUTTONS
-   ------------------------------------------------------- */
-
+/* Buttons */
 .btn {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  padding: 13px 30px;
-  border-radius: var(--radius-pill);
-  font-weight: 600;
-  font-size: 0.87rem;
+  gap: 8px;
+  padding: 14px 32px;
+  border-radius: var(--radius-sm);
+  font-weight: 500;
+  font-size: 0.85rem;
   font-family: var(--font-body);
+  letter-spacing: 0.2px;
   border: none;
   cursor: pointer;
-  transition: all 0.3s;
+  transition: all 0.3s cubic-bezier(0.16,1,0.3,1);
 }
-
 .btn--primary {
   background: var(--charcoal);
-  color: #FAF6F1;
+  color: var(--bg);
 }
 .btn--primary:hover {
-  background: #2A231E;
+  background: #1A1512;
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(46, 39, 35, 0.12);
+  box-shadow: 0 8px 24px rgba(44,37,32,0.15);
 }
-
 .btn--outline {
   background: transparent;
   color: var(--text);
@@ -172,69 +150,129 @@ body::after {
   background: var(--rust-soft);
 }
 
+/* Animated gradient button */
+@property --gx { syntax: '<percentage>'; initial-value: 11%; inherits: false; }
+@property --gy { syntax: '<percentage>'; initial-value: 140%; inherits: false; }
+@property --gw { syntax: '<percentage>'; initial-value: 150%; inherits: false; }
+@property --gh { syntax: '<percentage>'; initial-value: 180%; inherits: false; }
+@property --gc1 { syntax: '<color>'; initial-value: #2C2520; inherits: false; }
+@property --gc2 { syntax: '<color>'; initial-value: #3A2A1E; inherits: false; }
+@property --gc3 { syntax: '<color>'; initial-value: #6B3E2A; inherits: false; }
+@property --gc4 { syntax: '<color>'; initial-value: #8B5E3C; inherits: false; }
+@property --gc5 { syntax: '<color>'; initial-value: #C0623A; inherits: false; }
+@property --ba { syntax: '<angle>'; initial-value: 20deg; inherits: false; }
+@property --bc1 { syntax: '<color>'; initial-value: rgba(192,98,58,0.15); inherits: false; }
+@property --bc2 { syntax: '<color>'; initial-value: rgba(192,98,58,0.5); inherits: false; }
 
-/* -------------------------------------------------------
-   5. SECTION HELPERS
-   ------------------------------------------------------- */
-
-.sec-label {
-  font-family: var(--font-mono);
-  font-size: 0.7rem;
-  font-weight: 500;
-  letter-spacing: 2.5px;
-  text-transform: uppercase;
-  margin-bottom: 0.6rem;
+.btn--gradient {
+  position: relative;
+  color: var(--bg);
+  border: none;
+  border-radius: var(--radius);
+  padding: 16px 36px;
+  font-weight: 600;
+  background: radial-gradient(
+    var(--gw) var(--gh) at var(--gx) var(--gy),
+    var(--gc1) 37%,
+    var(--gc2) 61%,
+    var(--gc3) 78%,
+    var(--gc4) 90%,
+    var(--gc5) 100%
+  );
+  transition:
+    --gx 0.5s, --gy 0.5s, --gw 0.5s, --gh 0.5s,
+    --gc1 0.5s, --gc2 0.5s, --gc3 0.5s, --gc4 0.5s, --gc5 0.5s,
+    --ba 0.5s, --bc1 0.5s, --bc2 0.5s,
+    transform 0.3s cubic-bezier(0.16,1,0.3,1),
+    box-shadow 0.3s cubic-bezier(0.16,1,0.3,1);
 }
-.sec-label--rust  { color: var(--rust); }
-.sec-label--sage  { color: var(--sage); }
-.sec-label--mauve { color: var(--mauve); }
-.sec-label--teal  { color: var(--teal); }
+.btn--gradient::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(var(--ba), var(--bc1), var(--bc2));
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  -webkit-mask-composite: xor;
+  pointer-events: none;
+}
+.btn--gradient:hover {
+  --gx: 0%;
+  --gy: 92%;
+  --gw: 120%;
+  --gh: 103%;
+  --gc1: #C0623A;
+  --gc2: #E07B6A;
+  --gc3: #C49A3C;
+  --gc4: #3A2A1E;
+  --gc5: #2C2520;
+  --ba: 190deg;
+  --bc1: rgba(224,123,106,0.1);
+  --bc2: rgba(192,98,58,0.6);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(192,98,58,0.25);
+}
+
+/* Section headers */
+.sec-marker {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.sec-marker::after {
+  content: '';
+  height: 1px;
+  width: 40px;
+  background: currentColor;
+  opacity: 0.3;
+}
+.sec-marker--rust  { color: var(--rust); }
+.sec-marker--sage  { color: var(--sage); }
+.sec-marker--mauve { color: var(--mauve); }
+.sec-marker--teal  { color: var(--teal); }
+.sec-marker--amber { color: var(--amber); }
 
 .sec-title {
   font-family: var(--font-heading);
-  font-size: 2.5rem;
+  font-size: 2.8rem;
   font-weight: 400;
   color: var(--text);
   margin-bottom: 0.75rem;
-  line-height: 1.15;
+  line-height: 1.1;
+  letter-spacing: -0.5px;
 }
 
 .sec-desc {
-  font-size: 1.02rem;
+  font-size: 1rem;
   color: var(--text-mid);
-  max-width: 520px;
+  max-width: 480px;
   line-height: 1.7;
-  margin-bottom: 2.75rem;
+  margin-bottom: 3rem;
   font-weight: 300;
 }
 
-.sec-line {
-  width: 40px;
-  height: 3px;
-  border-radius: 2px;
-  margin-bottom: 2rem;
-}
-.sec-line--rust  { background: linear-gradient(90deg, var(--rust), var(--peach)); }
-.sec-line--sage  { background: linear-gradient(90deg, var(--sage), var(--teal)); }
-.sec-line--mauve { background: linear-gradient(90deg, var(--mauve), var(--rose)); }
-
-
-/* -------------------------------------------------------
-   6. SCROLL ANIMATIONS
-   ------------------------------------------------------- */
-
+/* Scroll animations */
 .reveal {
   opacity: 0;
-  transform: translateY(40px);
+  transform: translateY(30px);
   transition:
-    opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
-    transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    opacity 0.8s cubic-bezier(0.16,1,0.3,1),
+    transform 0.8s cubic-bezier(0.16,1,0.3,1);
 }
 .reveal--visible {
   opacity: 1;
   transform: translateY(0);
 }
-.reveal-delay-1 { transition-delay: 0.1s; }
-.reveal-delay-2 { transition-delay: 0.2s; }
-.reveal-delay-3 { transition-delay: 0.3s; }
-.reveal-delay-4 { transition-delay: 0.4s; }
+.reveal-delay-1 { transition-delay: 0.08s; }
+.reveal-delay-2 { transition-delay: 0.16s; }
+.reveal-delay-3 { transition-delay: 0.24s; }
+.reveal-delay-4 { transition-delay: 0.32s; }
+.reveal-delay-5 { transition-delay: 0.40s; }
