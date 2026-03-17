@@ -12,6 +12,10 @@ const LANGUAGES = [
 function About() {
   return (
     <section id="about" className="about">
+      <div className="color-wash">
+        <div className="color-wash__blob color-wash__blob--rust" />
+        <div className="color-wash__blob color-wash__blob--amber" />
+      </div>
       <div className="container">
         <Reveal>
           <p className="sec-marker sec-marker--rust">// 01 about</p>

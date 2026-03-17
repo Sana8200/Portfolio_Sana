@@ -49,6 +49,10 @@ const PROJECTS = [
 function Projects() {
   return (
     <section id="projects" className="projects">
+      <div className="color-wash">
+        <div className="color-wash__blob color-wash__blob--peach" />
+        <div className="color-wash__blob color-wash__blob--rose" />
+      </div>
       <div className="container">
         <Reveal>
           <p className="sec-marker sec-marker--sage">// 02 projects</p>

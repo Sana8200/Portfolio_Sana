@@ -4,6 +4,10 @@ import './Contact.css';
 function Contact() {
   return (
     <section id="contact" className="contact">
+      <div className="color-wash">
+        <div className="color-wash__blob color-wash__blob--amber" />
+        <div className="color-wash__blob color-wash__blob--coral" />
+      </div>
       <div className="dot-grid" />
       <div className="container">
         <Reveal>

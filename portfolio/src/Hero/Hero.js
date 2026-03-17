@@ -1,4 +1,3 @@
-import ShaderBg from '../ShaderBg/ShaderBg';
 import './Hero.css';
 
 const SOCIALS = [
@@ -17,11 +16,13 @@ const HIGHLIGHTS = [
 function Hero() {
   return (
     <section id="hero" className="hero">
-      <ShaderBg />
+      <div className="hero__blobs">
+        <div className="hero__blob hero__blob--1" />
+        <div className="hero__blob hero__blob--2" />
+        <div className="hero__blob hero__blob--3" />
+        <div className="hero__blob hero__blob--4" />
+      </div>
       <div className="dot-grid" />
-      <div className="hero__gradient hero__gradient--1" />
-      <div className="hero__gradient hero__gradient--2" />
-      <div className="hero__gradient hero__gradient--3" />
       <div className="container">
         <div className="hero__grid">
           <div className="hero__content">

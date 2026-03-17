@@ -7,27 +7,57 @@
   overflow: hidden;
 }
 
-/* Color gradient washes — bigger, more visible */
-.hero__gradient {
+/* Animated color blobs */
+.hero__blobs {
   position: absolute;
-  border-radius: 50%;
-  filter: blur(90px);
+  inset: 0;
+  overflow: hidden;
   pointer-events: none;
 }
-.hero__gradient--1 {
-  width: 700px; height: 700px;
-  top: -20%; right: -15%;
-  background: radial-gradient(circle, rgba(192,98,58,0.18) 0%, rgba(196,154,60,0.10) 50%, transparent 70%);
+.hero__blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  will-change: transform;
 }
-.hero__gradient--2 {
+.hero__blob--1 {
+  width: 600px; height: 600px;
+  top: -15%; right: -10%;
+  background: radial-gradient(circle, rgba(192,98,58,0.22) 0%, rgba(224,154,110,0.12) 40%, transparent 70%);
+  animation: blobDrift1 18s ease-in-out infinite;
+}
+.hero__blob--2 {
   width: 500px; height: 500px;
-  bottom: -10%; left: -8%;
-  background: radial-gradient(circle, rgba(74,142,133,0.14) 0%, rgba(142,107,146,0.08) 50%, transparent 70%);
+  bottom: -15%; left: -5%;
+  background: radial-gradient(circle, rgba(184,137,46,0.18) 0%, rgba(196,154,60,0.10) 40%, transparent 70%);
+  animation: blobDrift2 22s ease-in-out infinite;
 }
-.hero__gradient--3 {
-  width: 400px; height: 400px;
-  top: 30%; left: 40%;
-  background: radial-gradient(circle, rgba(184,137,46,0.08) 0%, transparent 70%);
+.hero__blob--3 {
+  width: 450px; height: 450px;
+  top: 20%; left: 30%;
+  background: radial-gradient(circle, rgba(224,123,106,0.14) 0%, rgba(192,98,58,0.06) 50%, transparent 70%);
+  animation: blobDrift3 20s ease-in-out infinite;
+}
+.hero__blob--4 {
+  width: 350px; height: 350px;
+  top: 60%; right: 20%;
+  background: radial-gradient(circle, rgba(184,107,122,0.12) 0%, rgba(142,107,146,0.06) 50%, transparent 70%);
+  animation: blobDrift1 25s ease-in-out infinite reverse;
+}
+
+@keyframes blobDrift1 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(30px, -20px) scale(1.05); }
+  66% { transform: translate(-20px, 15px) scale(0.95); }
+}
+@keyframes blobDrift2 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(-25px, 20px) scale(1.08); }
+  66% { transform: translate(20px, -15px) scale(0.96); }
+}
+@keyframes blobDrift3 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(15px, 25px) scale(1.04); }
 }
 
 /* Grid: text left, cards right */

@@ -11,11 +11,11 @@
   --bg-card:        #FBF7F2;
   --bg-card-alt:    #F0E8DE;
 
-  /* Richer tinted section backgrounds */
+  /* Warm tinted section backgrounds */
   --bg-rust:        #F7EBE3;
-  --bg-sage:        #E8EDE4;
-  --bg-mauve:       #EDE6EF;
-  --bg-teal:        #E4EDEB;
+  --bg-sage:        #F0E8DE;
+  --bg-mauve:       #F3EAE2;
+  --bg-teal:        #EDE5DB;
   --bg-amber:       #F2ECDE;
 
   /* Core palette */
@@ -101,6 +101,59 @@ body::after {
   max-width: 1080px;
   margin: 0 auto;
   padding: 0 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* Color wash — reusable animated gradient blobs */
+.color-wash {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+.color-wash__blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  will-change: transform;
+  animation: washDrift 20s ease-in-out infinite;
+}
+.color-wash__blob--rust {
+  width: 500px; height: 500px;
+  top: -10%; right: -5%;
+  background: radial-gradient(circle, rgba(192,98,58,0.16) 0%, rgba(224,154,110,0.08) 50%, transparent 70%);
+}
+.color-wash__blob--amber {
+  width: 450px; height: 450px;
+  bottom: -10%; left: -5%;
+  background: radial-gradient(circle, rgba(184,137,46,0.14) 0%, rgba(196,154,60,0.06) 50%, transparent 70%);
+  animation-delay: -8s;
+  animation-direction: reverse;
+}
+.color-wash__blob--peach {
+  width: 500px; height: 500px;
+  top: -5%; left: -8%;
+  background: radial-gradient(circle, rgba(224,154,110,0.16) 0%, rgba(192,98,58,0.06) 50%, transparent 70%);
+}
+.color-wash__blob--rose {
+  width: 400px; height: 400px;
+  bottom: -5%; right: -5%;
+  background: radial-gradient(circle, rgba(184,107,122,0.12) 0%, rgba(224,123,106,0.06) 50%, transparent 70%);
+  animation-delay: -10s;
+  animation-direction: reverse;
+}
+.color-wash__blob--coral {
+  width: 400px; height: 400px;
+  top: -10%; right: -8%;
+  background: radial-gradient(circle, rgba(224,123,106,0.14) 0%, rgba(192,98,58,0.06) 50%, transparent 70%);
+  animation-delay: -5s;
+}
+@keyframes washDrift {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(25px, -15px) scale(1.06); }
+  66% { transform: translate(-15px, 20px) scale(0.95); }
 }
 
 /* Dot-grid background utility */

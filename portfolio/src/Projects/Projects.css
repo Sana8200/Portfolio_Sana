@@ -2,6 +2,7 @@
   padding: 7rem 0;
   background: var(--bg-sage);
   position: relative;
+  overflow: hidden;
 }
 
 /* 2-column masonry-like grid for projects */
