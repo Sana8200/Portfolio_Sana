@@ -1,7 +1,7 @@
 .footer {
-  border-top: 1px solid var(--border);
+  border-top: 1px solid rgba(255,255,255,0.1);
   padding: 2rem;
-  background: var(--bg-warm);
+  background: var(--charcoal);
 }
 
 .footer__inner {
@@ -22,18 +22,18 @@
   font-family: var(--font-mono);
   font-size: 0.75rem;
   font-weight: 500;
-  color: var(--text-mid);
+  color: rgba(255,255,255,0.55);
 }
 
 .footer__year {
   font-family: var(--font-mono);
   font-size: 0.7rem;
-  color: var(--text-dim);
+  color: rgba(255,255,255,0.35);
 }
 
 .footer__right {
   font-size: 0.75rem;
-  color: var(--text-dim);
+  color: rgba(255,255,255,0.35);
 }
 
 @media (max-width: 600px) {
