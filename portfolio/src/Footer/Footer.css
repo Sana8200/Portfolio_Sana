@@ -1,0 +1,16 @@
+/* -------------------------------------------------------
+   FOOTER
+   ------------------------------------------------------- */
+
+.footer {
+  text-align: center;
+  padding: 2rem;
+  border-top: 1px solid var(--border);
+}
+.footer p {
+  font-size: 0.82rem;
+  color: var(--text-dim);
+}
+.footer span {
+  color: var(--rust);
+}

@@ -1,0 +1,151 @@
+/* -------------------------------------------------------
+   PROJECTS
+   ------------------------------------------------------- */
+
+.projects {
+  padding: 7rem 0;
+  background: var(--bg-warm);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+/* Stacked list layout */
+.projects__list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Base project card */
+.proj {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: all 0.35s;
+}
+.proj:hover {
+  border-color: var(--border-hover);
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-3px);
+}
+
+/* Gallery — images on top */
+.proj__gallery {
+  border-bottom: 1px solid var(--border);
+  height: 240px;
+  overflow: hidden;
+}
+.proj__gallery-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+.proj:hover .proj__gallery-img {
+  transform: scale(1.03);
+}
+
+/* Single image on top */
+.proj__image-wrap {
+  overflow: hidden;
+  border-bottom: 1px solid var(--border);
+  height: 240px;
+}
+.proj__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+.proj:hover .proj__img {
+  transform: scale(1.03);
+}
+
+/* Emoji-only projects — compact horizontal row */
+.proj:has(.proj__icon) {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+}
+
+/* Emoji icon area */
+.proj__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  border-right: 1px solid var(--border);
+}
+.proj__icon--rust  { background: linear-gradient(135deg, rgba(192, 98, 58, 0.06), rgba(232, 168, 124, 0.08)); }
+.proj__icon--sage  { background: linear-gradient(135deg, rgba(107, 127, 94, 0.06), rgba(90, 158, 150, 0.06)); }
+.proj__icon--mauve { background: linear-gradient(135deg, rgba(155, 123, 158, 0.06), rgba(196, 122, 138, 0.06)); }
+.proj__icon--amber { background: linear-gradient(135deg, rgba(196, 154, 60, 0.06), rgba(232, 168, 124, 0.06)); }
+.proj__icon--teal  { background: linear-gradient(135deg, rgba(90, 158, 150, 0.06), rgba(107, 127, 94, 0.06)); }
+
+/* Card body */
+.proj__body {
+  padding: 1.75rem 2rem;
+  display: flex;
+  flex-direction: column;
+}
+.proj__title {
+  font-family: var(--font-heading);
+  font-size: 1.35rem;
+  font-weight: 400;
+  color: var(--text);
+  margin-bottom: 0.65rem;
+}
+.proj__desc {
+  font-size: 0.92rem;
+  color: var(--text-mid);
+  line-height: 1.75;
+  margin-bottom: 1.15rem;
+  font-weight: 300;
+  max-width: 640px;
+}
+
+/* Tags */
+.proj__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-bottom: 1.15rem;
+}
+.proj__tag {
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+  font-size: 0.7rem;
+  font-weight: 600;
+  border: 1px solid var(--border);
+}
+.proj__tag--rust  { color: var(--rust);  background: var(--rust-soft);  border-color: var(--rust-mid); }
+.proj__tag--sage  { color: var(--sage);  background: var(--sage-soft);  border-color: var(--sage-mid); }
+.proj__tag--mauve { color: var(--mauve); background: var(--mauve-soft); border-color: var(--mauve-mid); }
+.proj__tag--amber { color: var(--amber); background: var(--amber-soft); border-color: var(--amber-mid); }
+.proj__tag--teal  { color: var(--teal);  background: var(--teal-soft);  border-color: var(--teal-mid); }
+
+/* Link */
+.proj__link {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--rust);
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  transition: gap 0.2s;
+}
+.proj__link:hover { gap: 10px; }
+
+/* Responsive */
+@media (max-width: 850px) {
+  .proj:has(.proj__icon) { grid-template-columns: 60px 1fr; }
+  .proj__gallery { height: 180px; }
+}
+
+@media (max-width: 600px) {
+  .proj__gallery    { height: 140px; }
+  .proj__image-wrap { height: 180px; }
+}
