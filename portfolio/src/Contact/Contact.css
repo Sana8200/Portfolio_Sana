@@ -1,8 +1,36 @@
 .contact {
   padding: 8rem 0;
-  background: var(--bg-mauve);
+  padding-top: 12rem;
+  background: var(--charcoal);
   position: relative;
   overflow: hidden;
+}
+/* Smooth light-to-dark transition from skills */
+.contact::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 220px;
+  background: linear-gradient(
+    to bottom,
+    var(--bg) 0%,
+    #E8D5C8 16%,
+    #DBBFAC 32%,
+    #C4A48E 48%,
+    #9E7E6A 64%,
+    #6B4F42 80%,
+    var(--charcoal) 100%
+  );
+  pointer-events: none;
+}
+
+.contact .sec-marker {
+  justify-content: center;
+}
+.contact .sec-marker--rust {
+  color: var(--coral);
 }
 
 .contact__inner {
@@ -19,15 +47,16 @@
   font-weight: 400;
   margin-bottom: 1.25rem;
   letter-spacing: -0.5px;
+  color: rgba(255,255,255,0.9);
 }
 .contact__title em {
-  color: var(--rust);
+  color: var(--coral);
   font-style: italic;
 }
 
 .contact__desc {
   font-size: 0.95rem;
-  color: var(--text-mid);
+  color: rgba(255,255,255,0.55);
   line-height: 1.8;
   margin-bottom: 2.5rem;
   font-weight: 400;
@@ -41,6 +70,17 @@
   margin-bottom: 2.5rem;
 }
 
+/* Override outline button for dark section */
+.contact .btn--outline {
+  color: rgba(255,255,255,0.7);
+  border-color: rgba(255,255,255,0.22);
+}
+.contact .btn--outline:hover {
+  border-color: var(--rust);
+  color: var(--coral);
+  background: rgba(192,98,58,0.1);
+}
+
 .contact__links {
   display: flex;
   gap: 0.75rem;
@@ -52,14 +92,19 @@
   font-family: var(--font-mono);
   font-size: 0.75rem;
   font-weight: 500;
-  color: var(--text-dim);
+  color: rgba(255,255,255,0.45);
   transition: color 0.2s;
   letter-spacing: 0.2px;
 }
 .contact__link:hover {
-  color: var(--mauve);
+  color: var(--coral);
 }
 .contact__divider {
-  color: var(--border-hover);
+  color: rgba(255,255,255,0.25);
   font-size: 0.8rem;
+}
+
+@media (max-width: 600px) {
+  .contact { padding: 4rem 0; padding-top: 8rem; }
+  .contact::before { height: 140px; }
 }
