@@ -5,43 +5,43 @@ const PROJECTS = [
   {
     title: 'Finger Oscilloscope',
     num: '01',
-    images: ['/images/oscilloscope-hardware.jpg'],
+    image: '/images/oscilloscope-hardware.jpg',
     desc: 'Built a finger-controlled digital oscilloscope solo using the DE10-Lite board and AD7705 ADC. Implemented SPI communication, VGA display output, and signal processing — all in C and Assembly without using the FPGA.',
     tags: ['C', 'Assembly', 'SPI', 'VGA'],
-    link: '#',
+    link: 'https://github.com/Sana8200/FingerOscilloscope',
     color: 'rust',
   },
   {
     title: 'LeafKeeper',
     num: '02',
     image: '/images/leafkeeper-app.png',
-    desc: 'Full-stack web application built in a team of 3 — a digital gardening companion to search for plants, create collections, and track plant care schedules.',
+    desc: 'Full-stack web application built in a team of 3 — a digital gardening companion to search for plants, create collections, and track plant care schedules with reminders.',
     tags: ['React', 'Node.js', 'Firebase'],
-    link: '#',
+    link: 'https://github.com/Sana8200',
     color: 'sage',
   },
   {
     title: 'Concurrent Programming',
     num: '03',
-    desc: 'Course labs exploring multi-threaded systems — from concurrent chat servers to thread-safe data structures and synchronization problems.',
+    desc: 'Built a multi-threaded chat server supporting concurrent client connections, implemented thread-safe data structures with fine-grained locking, and solved classic synchronization problems like dining philosophers.',
     tags: ['Java', 'Threads', 'Concurrency'],
-    link: '#',
+    link: 'https://github.com/Sana8200',
     color: 'mauve',
   },
   {
     title: 'Digital Design & Embedded',
     num: '04',
-    desc: 'Hands-on lab work across digital design and embedded electronics courses — covering combinational & sequential logic, FPGA programming, and hardware interfacing.',
+    desc: 'Designed and implemented combinational & sequential logic circuits on FPGA, programmed hardware interfaces for sensors and displays, and built embedded systems bridging VHDL with C drivers.',
     tags: ['VHDL', 'Embedded', 'Digital Logic'],
-    link: '#',
+    link: 'https://github.com/Sana8200',
     color: 'amber',
   },
   {
     title: 'Network & Algorithms',
     num: '05',
-    desc: 'Course projects in network communication and algorithms & data structures — implementing protocols, graph algorithms, and performance analysis.',
+    desc: 'Implemented TCP/UDP protocols and socket programming for networked applications, built graph traversal and shortest-path algorithms, and benchmarked sorting and search performance on large datasets.',
     tags: ['Python', 'Networking', 'Algorithms'],
-    link: '#',
+    link: 'https://github.com/Sana8200',
     color: 'teal',
   },
 ];
@@ -66,11 +66,11 @@ function Projects() {
         <div className="projects__grid">
           {PROJECTS.map((p, i) => (
             <Reveal key={i} delay={i < 3 ? i + 1 : 1}>
-              <article className={`proj proj--${p.color} ${!p.images && !p.image ? 'proj--no-img' : ''}`}>
-                {(p.images || p.image) && (
+              <article className={`proj proj--${p.color} ${!p.image ? 'proj--no-img' : ''}`}>
+                {p.image && (
                   <div className="proj__media">
                     <img
-                      src={p.images ? p.images[0] : p.image}
+                      src={p.image}
                       alt={p.title}
                       className="proj__img"
                     />
@@ -88,7 +88,7 @@ function Projects() {
                         <span key={tag} className="proj__tag">{tag}</span>
                       ))}
                     </div>
-                    <a href={p.link} className="proj__link">
+                    <a href={p.link} target="_blank" rel="noopener noreferrer" className="proj__link">
                       View project
                       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                         <path d="M7 17L17 7M17 7H7M17 7v10"/>
