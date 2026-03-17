@@ -6,17 +6,10 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,400&family=JetBrains+Mono:wght@400;500&display=swap');
 
 :root {
-  --bg:             #F5EDE4;
-  --bg-warm:        #EDE3D7;
-  --bg-card:        #FBF7F2;
-  --bg-card-alt:    #F0E8DE;
-
-  /* Warm tinted section backgrounds */
-  --bg-rust:        #F7EBE3;
-  --bg-sage:        #F0E8DE;
-  --bg-mauve:       #F3EAE2;
-  --bg-teal:        #EDE5DB;
-  --bg-amber:       #F2ECDE;
+  --bg:             #F0E7DD;
+  --bg-warm:        #E9DFCF;
+  --bg-card:        #F7F1EA;
+  --bg-card-alt:    #ECE4D8;
 
   /* Core palette */
   --rust:           #C0623A;
@@ -39,14 +32,12 @@
   --peach:          #E09A6E;
 
   /* Neutrals */
-  --charcoal:       #2C2520;
-  --brown:          #8B5E3C;
-  --sand:           #C4AD8F;
+  --charcoal:       #352D27;
   --text:           #2E2723;
   --text-mid:       #6B5F56;
   --text-dim:       #9A8E84;
-  --border:         #DDD4C8;
-  --border-hover:   #C9BBA9;
+  --border:         #D8CEBF;
+  --border-hover:   #C4B5A2;
 
   /* Typography */
   --font-heading:   'DM Serif Display', Georgia, serif;
@@ -144,28 +135,10 @@ body::after {
   animation-delay: -10s;
   animation-direction: reverse;
 }
-.color-wash__blob--coral {
-  width: 400px; height: 400px;
-  top: -10%; right: -8%;
-  background: radial-gradient(circle, rgba(224,123,106,0.14) 0%, rgba(192,98,58,0.06) 50%, transparent 70%);
-  animation-delay: -5s;
-}
 @keyframes washDrift {
   0%, 100% { transform: translate(0, 0) scale(1); }
   33% { transform: translate(25px, -15px) scale(1.06); }
   66% { transform: translate(-15px, 20px) scale(0.95); }
-}
-
-/* Dot-grid background utility */
-.dot-grid {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  opacity: 0.5;
-  background-image: radial-gradient(circle, var(--border) 1px, transparent 1px);
-  background-size: 24px 24px;
-  mask-image: radial-gradient(ellipse 70% 60% at 50% 50%, black 20%, transparent 70%);
-  -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 50%, black 20%, transparent 70%);
 }
 
 /* Buttons */
@@ -183,15 +156,6 @@ body::after {
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.16,1,0.3,1);
 }
-.btn--primary {
-  background: var(--charcoal);
-  color: var(--bg);
-}
-.btn--primary:hover {
-  background: #1A1512;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(44,37,32,0.15);
-}
 .btn--outline {
   background: transparent;
   color: var(--text);
@@ -208,8 +172,8 @@ body::after {
 @property --gy { syntax: '<percentage>'; initial-value: 140%; inherits: false; }
 @property --gw { syntax: '<percentage>'; initial-value: 150%; inherits: false; }
 @property --gh { syntax: '<percentage>'; initial-value: 180%; inherits: false; }
-@property --gc1 { syntax: '<color>'; initial-value: #2C2520; inherits: false; }
-@property --gc2 { syntax: '<color>'; initial-value: #3A2A1E; inherits: false; }
+@property --gc1 { syntax: '<color>'; initial-value: #352D27; inherits: false; }
+@property --gc2 { syntax: '<color>'; initial-value: #4A3428; inherits: false; }
 @property --gc3 { syntax: '<color>'; initial-value: #6B3E2A; inherits: false; }
 @property --gc4 { syntax: '<color>'; initial-value: #8B5E3C; inherits: false; }
 @property --gc5 { syntax: '<color>'; initial-value: #C0623A; inherits: false; }
@@ -260,8 +224,8 @@ body::after {
   --gc1: #C0623A;
   --gc2: #E07B6A;
   --gc3: #C49A3C;
-  --gc4: #3A2A1E;
-  --gc5: #2C2520;
+  --gc4: #4A3428;
+  --gc5: #352D27;
   --ba: 190deg;
   --bc1: rgba(224,123,106,0.1);
   --bc2: rgba(192,98,58,0.6);
@@ -329,3 +293,13 @@ body::after {
 .reveal-delay-3 { transition-delay: 0.24s; }
 .reveal-delay-4 { transition-delay: 0.32s; }
 .reveal-delay-5 { transition-delay: 0.40s; }
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  .reveal { opacity: 1; transform: none; }
+}
