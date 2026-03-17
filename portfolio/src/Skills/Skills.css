@@ -1,65 +1,90 @@
-/* -------------------------------------------------------
-   SKILLS
-   ------------------------------------------------------- */
-
 .skills {
   padding: 7rem 0;
+  background: var(--bg);
 }
 
 .skills__grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1.25rem;
+  gap: 1rem;
 }
 
-.skill-cat {
-  background: var(--bg-card);
+.scat {
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
   padding: 1.75rem;
-  box-shadow: var(--shadow);
-  transition: all 0.3s;
+  transition: all 0.3s cubic-bezier(0.16,1,0.3,1);
   position: relative;
   overflow: hidden;
 }
-.skill-cat:hover {
+.scat:hover {
   box-shadow: var(--shadow-hover);
   transform: translateY(-3px);
 }
 
-/* Top gradient bar */
-.skill-cat::before {
+/* Tinted backgrounds per category */
+.scat--rust  { background: linear-gradient(160deg, var(--bg-card) 30%, rgba(192,98,58,0.08)); }
+.scat--teal  { background: linear-gradient(160deg, var(--bg-card) 30%, rgba(74,142,133,0.08)); }
+.scat--mauve { background: linear-gradient(160deg, var(--bg-card) 30%, rgba(142,107,146,0.08)); }
+
+/* Top accent line */
+.scat::before {
   content: '';
   position: absolute;
   top: 0; left: 0; right: 0;
   height: 3px;
 }
-.skill-cat--rust::before  { background: linear-gradient(90deg, var(--rust), var(--coral)); }
-.skill-cat--teal::before  { background: linear-gradient(90deg, var(--teal), var(--sage)); }
-.skill-cat--mauve::before { background: linear-gradient(90deg, var(--mauve), var(--rose)); }
+.scat--rust::before  { background: linear-gradient(90deg, var(--rust), var(--coral)); }
+.scat--teal::before  { background: linear-gradient(90deg, var(--teal), var(--sage)); }
+.scat--mauve::before { background: linear-gradient(90deg, var(--mauve), var(--rose)); }
 
-.skill-cat__icon  { font-size: 1.5rem; margin-bottom: 0.75rem; }
-.skill-cat__title { font-family: var(--font-heading); font-size: 1.1rem; margin-bottom: 1rem; }
-.skill-cat__items { display: flex; flex-wrap: wrap; gap: 5px; }
+/* Head */
+.scat__head {
+  margin-bottom: 1.25rem;
+}
+.scat__label {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  display: block;
+  margin-bottom: 0.35rem;
+}
+.scat--rust  .scat__label { color: var(--rust); }
+.scat--teal  .scat__label { color: var(--teal); }
+.scat--mauve .scat__label { color: var(--mauve); }
 
-.skill-pill {
-  padding: 6px 14px;
-  border-radius: var(--radius-pill);
-  font-size: 0.76rem;
+.scat__title {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 400;
+  letter-spacing: -0.2px;
+}
+
+/* Pills */
+.scat__items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.scat__pill {
+  padding: 5px 12px;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
   font-weight: 500;
   color: var(--text-mid);
-  border: 1px solid var(--border);
   background: var(--bg-card-alt);
-  transition: all 0.25s;
+  border: 1px solid var(--border);
+  transition: all 0.2s;
+  letter-spacing: 0.1px;
 }
-.skill-pill:hover { transform: translateY(-1px); }
 
-/* Hover colors per category */
-.skill-cat--rust  .skill-pill:hover { color: var(--rust);  border-color: var(--rust-mid);  background: var(--rust-soft); }
-.skill-cat--teal  .skill-pill:hover { color: var(--teal);  border-color: var(--teal-mid);  background: var(--teal-soft); }
-.skill-cat--mauve .skill-pill:hover { color: var(--mauve); border-color: var(--mauve-mid); background: var(--mauve-soft); }
+.scat--rust  .scat__pill:hover { color: var(--rust);  border-color: var(--rust-mid);  background: var(--rust-soft); }
+.scat--teal  .scat__pill:hover { color: var(--teal);  border-color: var(--teal-mid);  background: var(--teal-soft); }
+.scat--mauve .scat__pill:hover { color: var(--mauve); border-color: var(--mauve-mid); background: var(--mauve-soft); }
 
-/* Responsive */
 @media (max-width: 850px) {
   .skills__grid { grid-template-columns: 1fr; }
 }
