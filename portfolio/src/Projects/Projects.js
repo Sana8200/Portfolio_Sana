@@ -58,7 +58,7 @@ function Projects() {
           <p className="sec-marker sec-marker--sage">// 02 projects</p>
           <h2 className="sec-title">Selected work</h2>
           <p className="sec-desc">
-            From embedded systems to full-stack web apps — projects that 
+            From embedded systems to full-stack web apps — projects that
             reflect how I think and build.
           </p>
         </Reveal>
