@@ -1,9 +1,9 @@
+/* Dark marquee — bridges hero into light sections */
 .tape {
   padding: 1.5rem 0;
   overflow: hidden;
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
-  background: var(--bg-warm);
+  background: linear-gradient(to bottom, var(--charcoal) 0%, #3E3430 60%, #42332C 100%);
+  border-bottom: none;
 }
 
 .tape__track {
@@ -26,13 +26,13 @@
   font-family: var(--font-mono);
   font-size: 0.78rem;
   font-weight: 500;
-  color: var(--text-mid);
+  color: rgba(255,255,255,0.5);
   white-space: nowrap;
   letter-spacing: 0.3px;
   transition: color 0.2s;
 }
 .tape__item:hover {
-  color: var(--rust);
+  color: var(--coral);
 }
 
 .tape__dot {
@@ -40,6 +40,6 @@
   height: 4px;
   border-radius: 50%;
   background: var(--rust);
-  opacity: 0.4;
+  opacity: 0.7;
   flex-shrink: 0;
 }
