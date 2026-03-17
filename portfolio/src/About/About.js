@@ -14,9 +14,8 @@ function About() {
     <section id="about" className="about">
       <div className="container">
         <Reveal>
-          <p className="sec-label sec-label--rust">About</p>
+          <p className="sec-marker sec-marker--rust">// 01 about</p>
           <h2 className="sec-title">A bit about me</h2>
-          <div className="sec-line sec-line--rust" />
         </Reveal>
 
         <div className="about__grid">
@@ -24,7 +23,7 @@ function About() {
             <div className="about__prose">
               <p>
                 I'm a <strong>third-year ICT Engineering student</strong> at{' '}
-                <span className="accent">KTH Royal Institute of Technology</span> in Stockholm.
+                <span className="about__accent">KTH Royal Institute of Technology</span> in Stockholm.
                 Before KTH I studied 2 years of computer science in Iran. I bring both a solid
                 theoretical background and hands-on engineering skills to every project.
               </p>
@@ -43,41 +42,33 @@ function About() {
             </div>
           </Reveal>
 
-          <div className="about__cards">
-            <Reveal delay={1}>
-              <div className="about__card about__card--rust">
-                <span className="about__card-icon">🎓</span>
-                <p className="about__card-label">Education</p>
-                <p className="about__card-value">
-                  B.Sc. ICT Engineering — KTH<br />
-                  <span>2023 – present · Stockholm, Sweden</span>
-                </p>
-              </div>
-            </Reveal>
+          <div className="about__sidebar">
             <Reveal delay={2}>
-              <div className="about__card about__card--amber">
-                <span className="about__card-icon">🏆</span>
-                <p className="about__card-label">Recognition</p>
-                <p className="about__card-value">
-                  King &amp; Swedish Game Industry Program<br />
-                  <span>Completed · Stockholm, Sweden</span>
-                </p>
+              <div className="about__card about__card--rust">
+                <p className="about__card-label">Education</p>
+                <p className="about__card-value">B.Sc. ICT Engineering — KTH</p>
+                <p className="about__card-meta">2023 – present / Stockholm</p>
               </div>
             </Reveal>
             <Reveal delay={3}>
-              <div className="about__card about__card--sage">
-                <span className="about__card-icon">✨</span>
-                <p className="about__card-label">Status</p>
-                <p className="about__card-value">Available for full-time internship</p>
+              <div className="about__card about__card--amber">
+                <p className="about__card-label">Recognition</p>
+                <p className="about__card-value">King & Swedish Game Industry Program</p>
+                <p className="about__card-meta">Completed / Stockholm</p>
               </div>
             </Reveal>
             <Reveal delay={4}>
+              <div className="about__card about__card--sage">
+                <p className="about__card-label">Status</p>
+                <p className="about__card-value">Available for internship</p>
+              </div>
+            </Reveal>
+            <Reveal delay={5}>
               <div className="about__card about__card--mauve">
-                <span className="about__card-icon">🌍</span>
                 <p className="about__card-label">Languages</p>
                 <div className="about__langs">
                   {LANGUAGES.map((l) => (
-                    <span key={l.name} className={`lang-tag ${l.native ? 'lang-tag--native' : ''}`}>
+                    <span key={l.name} className={`about__lang ${l.native ? 'about__lang--native' : ''}`}>
                       {l.name}
                     </span>
                   ))}
