@@ -3,8 +3,8 @@ import './About.css';
 
 const LANGUAGES = [
   { name: 'Persian', native: true },
-  { name: 'Azerbaijani', native: true },
-  { name: 'English', native: false },
+  { name: 'Azerbaijani', native: false },
+  { name: 'English', native: true },
   { name: 'Turkish', native: false },
   { name: 'Swedish', native: false },
 ];

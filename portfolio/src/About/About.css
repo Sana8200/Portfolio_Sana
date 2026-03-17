@@ -1,8 +1,30 @@
 .about {
   padding: 7rem 0;
-  background: var(--bg-rust);
+  padding-top: 10rem;
+  background: var(--bg);
   position: relative;
   overflow: hidden;
+}
+/* Smooth dark-to-light transition from marquee */
+.about::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 220px;
+  background: linear-gradient(
+    to bottom,
+    #42332C 0%,
+    #6B4F42 18%,
+    #9E7E6A 36%,
+    #C4A48E 54%,
+    #DDBFAC 72%,
+    #E8D5C8 86%,
+    var(--bg) 100%
+  );
+  pointer-events: none;
+  z-index: 0;
 }
 
 .about__grid {
@@ -105,4 +127,8 @@
 
 @media (max-width: 850px) {
   .about__grid { grid-template-columns: 1fr; gap: 2.5rem; }
+}
+@media (max-width: 600px) {
+  .about { padding: 4rem 0; padding-top: 7rem; }
+  .about::before { height: 140px; }
 }
