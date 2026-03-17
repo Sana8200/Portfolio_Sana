@@ -15,10 +15,12 @@ function Navbar() {
   return (
     <nav className={`nav ${scrolled ? 'nav--scrolled' : ''}`}>
       <div className="nav__inner">
-        <a href="#hero" className="nav__logo">Sana<i>.</i></a>
+        <a href="#hero" className="nav__logo">
+          sana<span className="nav__logo-accent">/</span>monhaseri
+        </a>
         <div className="nav__links">
           {NAV_LINKS.map((l) => (
-            <a key={l} href={`#${l.toLowerCase()}`} className="nav__link">{l}</a>
+            <a key={l} href={`#${l.toLowerCase()}`} className="nav__link">{l.toLowerCase()}</a>
           ))}
         </div>
       </div>
