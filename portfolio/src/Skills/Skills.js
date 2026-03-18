@@ -6,19 +6,19 @@ const SKILL_CATS = [
     label: 'lang',
     title: 'Languages',
     color: 'rust',
-    items: ['Java', 'C', 'Python', 'JavaScript', 'HTML/CSS', 'SQL', 'Assembly'],
+    items: ['Python', 'Java', 'JavaScript', 'C', 'SQL', 'HTML/CSS', 'Assembly'],
   },
   {
     label: 'tools',
     title: 'Frameworks & Tools',
     color: 'teal',
-    items: ['React', 'Node.js', 'Firebase', 'Git', 'Docker', 'Linux', 'REST APIs'],
+    items: ['React', 'Git', 'Docker', 'Linux', 'PostgreSQL', 'Google Workspace'],
   },
   {
     label: 'concepts',
     title: 'Concepts',
     color: 'mauve',
-    items: ['Data Structures', 'Algorithms', 'OOP', 'Concurrency', 'Digital Design', 'CI/CD'],
+    items: ['Data Analytics', 'Database Design', 'UI/UX', 'OOP', 'Concurrency'],
   },
 ];
 
