@@ -31,8 +31,8 @@ const PROJECTS = [
   {
     title: 'Digital Design & Embedded',
     num: '04',
-    desc: 'Designed and implemented combinational & sequential logic circuits on FPGA, programmed hardware interfaces for sensors and displays, and built embedded systems bridging VHDL with C drivers.',
-    tags: ['VHDL', 'Embedded', 'Digital Logic'],
+    desc: 'Designed and implemented combinational & sequential logic circuits, programmed hardware interfaces for sensors and displays.',
+    tags: ['Embedded', 'Digital Logic'],
     link: 'https://github.com/Sana8200',
     color: 'amber',
   },
@@ -43,6 +43,14 @@ const PROJECTS = [
     tags: ['Python', 'Networking', 'Algorithms'],
     link: 'https://github.com/Sana8200',
     color: 'teal',
+  },
+  {
+    title: 'Portfolio Website',
+    num: '06',
+    desc: 'Designed and built this portfolio from scratch — a warm, typography-driven site with animated light beams, smooth section transitions, scroll-reveal animations, and a custom design system.',
+    tags: ['React', 'CSS', 'Framer Motion'],
+    link: 'https://github.com/Sana8200',
+    color: 'rust',
   },
 ];
 
