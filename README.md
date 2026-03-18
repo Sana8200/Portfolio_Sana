@@ -9,15 +9,6 @@ Personal portfolio site built with React. Warm, typography-driven design with an
 - Plain CSS with custom properties
 - Canvas API (animated beams)
 
-## Getting Started
-
-```bash
-cd portfolio
-npm install
-npm start
-```
-
-Runs on `http://localhost:3000`.
 
 ## Project Structure
 
