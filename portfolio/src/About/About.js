@@ -28,20 +28,23 @@ function About() {
               <p>
                 I'm a <strong>third-year ICT Engineering student</strong> at{' '}
                 <span className="about__accent">KTH Royal Institute of Technology</span> in Stockholm.
-                Before KTH I studied 2 years of computer science in Iran. I bring both a solid
-                theoretical background and hands-on engineering skills to every project.
+                My coursework spans everything from low-level systems programming in C and Assembly
+                to full-stack web development with React and REST APIs — and I genuinely enjoy
+                working across that entire spectrum.
               </p>
               <p>
-                At KTH I've worked as a <strong>Programming Lab Assistant</strong> and a{' '}
-                <strong>Digital Design Lab Assistant</strong>, helping students debug their code
-                and board circuits. I also serve as an{' '}
-                <strong>International Student Ambassador</strong>, connecting prospective
-                students with life at KTH.
+                At KTH I work as a <strong>Programming Lab Assistant</strong>, where I help
+                students debug code and build their understanding of core CS concepts during weekly
+                lab sessions. I'm also a <strong>Digital Design Lab Assistant</strong>,
+                guiding students through circuit design and hardware interfaces. I also serve as an{' '}
+                <strong>International Student Ambassador</strong> for the EECS school, representing
+                KTH at events and advising prospective international students.
               </p>
               <p>
-                I'm passionate about building things that work at the intersection of hardware
-                and software — whether that's a finger-controlled oscilloscope built from scratch,
-                a full-stack gardening app like LeafKeeper, or multi-threaded systems in Java.
+                I've built a real-time oscilloscope, designed databases for music schools,
+                written multi-threaded servers in Java, and created this portfolio from scratch.
+                What ties it all together is that I like understanding how things work at every
+                level — and building software that actually solves problems.
               </p>
             </div>
           </Reveal>
@@ -57,14 +60,14 @@ function About() {
             <Reveal delay={3}>
               <div className="about__card about__card--amber">
                 <p className="about__card-label">Recognition</p>
-                <p className="about__card-value">King & Swedish Game Industry Program</p>
-                <p className="about__card-meta">Completed / Stockholm</p>
+                <p className="about__card-value">King & Swedish Game Industry Scholarship</p>
+                <p className="about__card-meta">2025 - 2026/ Stockholm</p>
               </div>
             </Reveal>
             <Reveal delay={4}>
               <div className="about__card about__card--sage">
                 <p className="about__card-label">Status</p>
-                <p className="about__card-value">Available for internship</p>
+                <p className="about__card-value">Available for full-time internship</p>
               </div>
             </Reveal>
             <Reveal delay={5}>
