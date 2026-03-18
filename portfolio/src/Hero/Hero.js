@@ -133,7 +133,7 @@ function Hero() {
             <h1 className="hero__title">
               <span className="hero__title-line1">Sana Monhaseri</span>
               <br />
-              <span className="hero__title-line2">Hardware & Web Engineer</span>
+              <span className="hero__title-line2">Software & Embedded Developer</span>
             </h1>
           </motion.div>
 
@@ -150,16 +150,21 @@ function Hero() {
           </motion.div>
 
           <motion.div custom={4} variants={fadeUp} initial="hidden" animate="visible" className="hero__socials">
-            {SOCIALS.map((s) => (
-              <a
-                key={s.label}
-                href={s.url}
-                {...(s.label !== 'Email' ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
-                className="hero__social"
-              >
-                {s.label}
-              </a>
-            ))}
+            <a href={SOCIALS.find(s => s.label === 'GitHub').url} target="_blank" rel="noopener noreferrer" className="hero__social-icon" aria-label="GitHub">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/>
+              </svg>
+            </a>
+            <a href={SOCIALS.find(s => s.label === 'LinkedIn').url} target="_blank" rel="noopener noreferrer" className="hero__social-icon" aria-label="LinkedIn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-4 0v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/>
+              </svg>
+            </a>
+            <a href={SOCIALS.find(s => s.label === 'Email').url} className="hero__social-icon" aria-label="Email">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                <rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 4L12 13 2 4"/>
+              </svg>
+            </a>
           </motion.div>
         </div>
       </div>

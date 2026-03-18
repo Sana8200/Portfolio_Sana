@@ -1,5 +1,5 @@
 .hero {
-  min-height: 100vh;
+  min-height: 85vh;
   width: 100%;
   display: flex;
   align-items: center;
@@ -69,7 +69,7 @@
 /* Title */
 .hero__title {
   font-family: var(--font-heading);
-  font-size: clamp(2.6rem, 6vw, 5rem);
+  font-size: clamp(2.2rem, 5vw, 4rem);
   font-weight: 400;
   line-height: 1.1;
   margin-bottom: 1.5rem;
@@ -126,33 +126,25 @@
 /* Socials */
 .hero__socials {
   display: flex;
-  gap: 1.5rem;
+  gap: 1rem;
   justify-content: center;
 }
-.hero__social {
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
-  font-weight: 500;
+.hero__social-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
   color: rgba(255,255,255,0.45);
-  position: relative;
-  transition: color 0.2s;
-  letter-spacing: 0.2px;
+  transition: all 0.25s cubic-bezier(0.16,1,0.3,1);
 }
-.hero__social::after {
-  content: '';
-  position: absolute;
-  bottom: -2px;
-  left: 0;
-  width: 0;
-  height: 1px;
-  background: var(--rust);
-  transition: width 0.3s cubic-bezier(0.16,1,0.3,1);
-}
-.hero__social:hover {
+.hero__social-icon:hover {
   color: var(--coral);
-}
-.hero__social:hover::after {
-  width: 100%;
+  border-color: var(--coral);
+  background: rgba(224,123,106,0.1);
+  transform: translateY(-2px);
 }
 
 /* Fade overlay at edges */
