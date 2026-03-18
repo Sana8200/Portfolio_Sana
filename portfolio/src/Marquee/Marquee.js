@@ -1,9 +1,9 @@
 import './Marquee.css';
 
 const ITEMS = [
-  'Java', 'C', 'Python', 'JavaScript', 'React', 'Node.js',
-  'HTML/CSS', 'SQL', 'Assembly', 'Docker', 'Git', 'Firebase',
-  'Linux', 'REST APIs', 'Digital Design', 'Algorithms', 'OOP', 'CI/CD',
+  'Python', 'Java', 'JavaScript', 'C', 'SQL', 'HTML/CSS', 'Assembly',
+  'React', 'Git', 'Docker', 'Linux', 'PostgreSQL',
+  'Data Analytics', 'Database Design', 'UI/UX', 'OOP', 'Concurrency',
 ];
 
 function Marquee() {
