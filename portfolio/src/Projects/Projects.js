@@ -53,7 +53,7 @@ function ImageSlider({ images, alt, color }) {
 
 const PROJECTS = [
   {
-    title: 'Finger Oscilloscope',
+    title: 'FingerOscilloscope',
     num: '01',
     images: ['/images/oscilloscope-hardware.jpg', '/images/oscilloscope-screen.jpg'],
     desc: 'Built a real-time digital oscilloscope on a DE10-Lite FPGA using a RISC-V processor and 16-bit ADC. Implemented VGA waveform display (320\u00d7240) with run/stop, zoom/pan, and dual-mode operation. Firmware in C and Assembly for SPI and ADC data acquisition.',
