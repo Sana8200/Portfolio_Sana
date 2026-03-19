@@ -1,8 +1,8 @@
 {
   "short_name": "Sana Portfolio",
-  "name": "Sana Monhaseri — Portfolio",
+  "name": "Sana Monhaseri — Software & Embedded Developer",
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#FAF6F1",
-  "background_color": "#FAF6F1"
+  "theme_color": "#352D27",
+  "background_color": "#F0E7DD"
 }
