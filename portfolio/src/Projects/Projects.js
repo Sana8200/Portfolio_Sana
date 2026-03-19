@@ -2,13 +2,13 @@ import { useState } from 'react';
 import { Reveal } from '../hooks/useReveal';
 import './Projects.css';
 
-function ImageSlider({ images, alt, color }) {
+function ImageSlider({ images, alt, color, imgClass }) {
   const [current, setCurrent] = useState(0);
   if (!images || images.length === 0) return null;
   if (images.length === 1) {
     return (
       <div className="proj__media">
-        <img src={images[0]} alt={alt} className="proj__img" />
+        <img src={images[0]} alt={alt} className={`proj__img ${imgClass || ''}`} />
       </div>
     );
   }
@@ -105,6 +105,8 @@ const PROJECTS = [
   {
     title: 'Portfolio Website',
     num: '07',
+    images: ['/images/portfolio-project.png'],
+    imgClass: 'proj__img--screenshot',
     desc: 'Designed and built this portfolio from scratch — a warm, typography-driven site with animated light beams, smooth section transitions, scroll-reveal animations, and a custom design system.',
     tags: ['React', 'CSS', 'Framer Motion'],
     link: 'https://github.com/Sana8200',
@@ -133,7 +135,7 @@ function Projects() {
           {PROJECTS.map((p, i) => (
             <Reveal key={i} delay={i < 3 ? i + 1 : 1}>
               <article className={`proj proj--${p.color} ${!p.images ? 'proj--no-img' : ''}`}>
-                <ImageSlider images={p.images} alt={p.title} color={p.color} />
+                <ImageSlider images={p.images} alt={p.title} color={p.color} imgClass={p.imgClass} />
                 <div className="proj__body">
                   <div className="proj__header">
                     <span className="proj__num">{p.num}</span>
