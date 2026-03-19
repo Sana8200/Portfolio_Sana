@@ -19,6 +19,8 @@
   color: rgba(255,255,255,0.85);
   letter-spacing: -0.3px;
   transition: color 0.4s;
+  position: relative;
+  z-index: 110;
 }
 .nav__logo-accent {
   color: var(--coral);
@@ -75,6 +77,164 @@
   gap: 2px;
 }
 
+/* ========================================
+   Hamburger Button — hidden on desktop
+   ======================================== */
+.nav__burger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 36px;
+  height: 36px;
+  padding: 6px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  z-index: 110;
+}
+
+.nav__burger-line {
+  display: block;
+  width: 100%;
+  height: 1.5px;
+  border-radius: 2px;
+  background: rgba(255,255,255,0.7);
+  transition: all 0.35s cubic-bezier(0.16,1,0.3,1);
+  transform-origin: center;
+}
+
+/* Scrolled burger color */
+.nav--scrolled .nav__burger-line {
+  background: var(--text);
+}
+
+/* Animated X when open */
+.nav__burger--open .nav__burger-line:nth-child(1) {
+  transform: translateY(6.5px) rotate(45deg);
+}
+.nav__burger--open .nav__burger-line:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+.nav__burger--open .nav__burger-line:nth-child(3) {
+  transform: translateY(-6.5px) rotate(-45deg);
+}
+
+/* When menu is open, burger lines should be white (overlays dark panel) */
+.nav__burger--open .nav__burger-line {
+  background: rgba(255,255,255,0.85);
+}
+
+/* ========================================
+   Mobile Menu Overlay
+   ======================================== */
+.nav-mobile {
+  position: fixed;
+  inset: 0;
+  z-index: 105;
+  pointer-events: none;
+  visibility: hidden;
+}
+.nav-mobile--open {
+  pointer-events: auto;
+  visibility: visible;
+}
+
+/* Backdrop */
+.nav-mobile::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(53, 45, 39, 0.5);
+  backdrop-filter: blur(4px);
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+.nav-mobile--open::before {
+  opacity: 1;
+}
+
+/* Slide-in panel */
+.nav-mobile__panel {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: min(320px, 85vw);
+  height: 100%;
+  background: var(--charcoal);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 5rem 2.5rem 3rem;
+  transform: translateX(100%);
+  transition: transform 0.4s cubic-bezier(0.16,1,0.3,1);
+}
+.nav-mobile--open .nav-mobile__panel {
+  transform: translateX(0);
+}
+
+/* Links */
+.nav-mobile__links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.nav-mobile__link {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 1rem 0;
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: rgba(255,255,255,0.8);
+  letter-spacing: -0.3px;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  opacity: 0;
+  transform: translateX(20px);
+  transition: opacity 0.35s ease, transform 0.35s ease, color 0.2s;
+}
+.nav-mobile--open .nav-mobile__link {
+  opacity: 1;
+  transform: translateX(0);
+}
+.nav-mobile__link:hover {
+  color: var(--coral);
+}
+
+.nav-mobile__link-num {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 500;
+  color: var(--rust);
+  opacity: 0.7;
+}
+
+/* Footer CTA */
+.nav-mobile__footer {
+  margin-top: auto;
+  padding-top: 2rem;
+}
+
+.nav-mobile__cta {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--coral);
+  letter-spacing: 0.3px;
+  transition: opacity 0.2s;
+}
+.nav-mobile__cta:hover {
+  opacity: 0.7;
+}
+
+/* ========================================
+   Responsive
+   ======================================== */
 @media (max-width: 600px) {
-  .nav__link { padding: 6px 8px; font-size: 0.75rem; }
+  .nav__links { display: none; }
+  .nav__burger { display: flex; }
 }
