@@ -38,11 +38,11 @@ function About() {
                 lab sessions. I'm also a <strong>Digital Design Lab Assistant</strong>,
                 guiding students through circuit design and hardware interfaces. I also serve as an{' '}
                 <strong>International Student Ambassador</strong> for the EECS school, representing
-                KTH at events and advising prospective international students.
+                KTH and advising prospective international students.
               </p>
               <p>
                 I've built a real-time oscilloscope, designed databases for music schools,
-                written multi-threaded servers in Java, and created this portfolio from scratch.
+                written multi-threaded servers in Java, and created this portfolio.
                 What ties it all together is that I like understanding how things work at every
                 level — and building software that actually solves problems.
               </p>
