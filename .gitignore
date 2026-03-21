@@ -19,6 +19,10 @@ node_modules/
 build/
 dist/
 
+# Firebase
+.firebase/
+.firebaserc
+
 # Logs
 *.log
 npm-debug.log*
