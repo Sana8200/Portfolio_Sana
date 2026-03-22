@@ -3,7 +3,7 @@
    Aesthetic: Warm Terminal Elegance
    ====================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500&family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,400&family=JetBrains+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,400&family=JetBrains+Mono:wght@400;500&display=swap');
 
 :root {
   --bg:             #F0E7DD;
@@ -238,30 +238,6 @@ body::after {
   transform: translateY(-2px);
   box-shadow: 0 8px 30px rgba(192,98,58,0.25);
 }
-
-/* Section headers */
-.sec-marker {
-  font-family: var(--font-mono);
-  font-size: 0.72rem;
-  font-weight: 500;
-  letter-spacing: 0.5px;
-  margin-bottom: 1.5rem;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-.sec-marker::after {
-  content: '';
-  height: 1px;
-  width: 50px;
-  background: currentColor;
-  opacity: 0.3;
-}
-.sec-marker--rust  { color: var(--rust); }
-.sec-marker--sage  { color: var(--sage); }
-.sec-marker--mauve { color: var(--mauve); }
-.sec-marker--teal  { color: var(--teal); }
-.sec-marker--amber { color: var(--amber); }
 
 .sec-title {
   font-family: var(--font-heading);
