@@ -18,10 +18,15 @@ node_modules/
 # Build
 build/
 dist/
+coverage/
 
 # Firebase
 .firebase/
 .firebaserc
+
+# PnP
+.pnp
+.pnp.js
 
 # Logs
 *.log
