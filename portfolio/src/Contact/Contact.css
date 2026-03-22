@@ -16,15 +16,16 @@
   background: linear-gradient(
     to bottom,
     var(--bg) 0%,
-    #ECD9CE 16%,
-    #E4CFC0 24%,
-    #DEC5B2 32%,
-    #D4B9A4 40%,
-    #C8A892 48%,
-    #B49580 56%,
-    #9A7D68 64%,
-    #7B5E4C 74%,
-    #5C4438 84%,
+    #ECD9CE 8%,
+    #E4CFC0 16%,
+    #DEC5B2 24%,
+    #D4B9A4 32%,
+    #C8A892 40%,
+    #B49580 48%,
+    #9A7D68 56%,
+    #7B5E4C 64%,
+    #5C4438 74%,
+    #42332C 86%,
     var(--charcoal) 100%
   );
   pointer-events: none;
