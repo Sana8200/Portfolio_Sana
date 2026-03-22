@@ -253,7 +253,7 @@ body::after {
 .sec-marker::after {
   content: '';
   height: 1px;
-  width: 40px;
+  width: 50px;
   background: currentColor;
   opacity: 0.3;
 }
