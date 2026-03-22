@@ -6,7 +6,7 @@ const LANGUAGES = [
   { name: 'Azerbaijani', native: false },
   { name: 'English', native: true },
   { name: 'Turkish', native: false },
-  { name: 'Swedish', native: false },
+  { name: 'Swedish', native: false, level: 'Beginner' },
 ];
 
 function About() {
@@ -75,8 +75,9 @@ function About() {
                 <p className="about__card-label">Languages</p>
                 <div className="about__langs">
                   {LANGUAGES.map((l) => (
-                    <span key={l.name} className={`about__lang ${l.native ? 'about__lang--native' : ''}`}>
+                    <span key={l.name} className={`about__lang ${l.native ? 'about__lang--native' : ''} ${l.level ? 'about__lang--beginner' : ''}`}>
                       {l.name}
+                      {l.level && <span className="about__lang-level">{l.level}</span>}
                     </span>
                   ))}
                 </div>
