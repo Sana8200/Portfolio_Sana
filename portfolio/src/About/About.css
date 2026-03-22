@@ -129,6 +129,15 @@
   color: var(--rust);
   background: var(--rust-soft);
 }
+.about__lang--beginner {
+  opacity: 0.6;
+}
+.about__lang-level {
+  margin-left: 6px;
+  font-size: 0.6rem;
+  opacity: 0.7;
+  font-style: italic;
+}
 
 @media (max-width: 850px) {
   .about__grid { grid-template-columns: 1fr; gap: 2.5rem; }
