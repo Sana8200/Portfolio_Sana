@@ -114,7 +114,7 @@ const fadeUp = {
 function Hero() {
   return (
     <section id="hero" className="hero">
-      <BeamsCanvas />
+      <BeamsCanvas className="hero__canvas" />
 
       <motion.div
         className="hero__shimmer"
