@@ -8,7 +8,6 @@ function Contact() {
       <div className="container">
         <Reveal>
           <div className="contact__inner">
-            <p className="sec-marker sec-marker--rust">// 04 contact</p>
             <h2 className="contact__title">
               Let's <em>connect</em>
             </h2>

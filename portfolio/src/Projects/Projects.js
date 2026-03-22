@@ -123,7 +123,6 @@ function Projects() {
       </div>
       <div className="container">
         <Reveal>
-          <p className="sec-marker sec-marker--sage">// 02 projects</p>
           <h2 className="sec-title">Selected work</h2>
           <p className="sec-desc">
             From embedded systems to full-stack web apps — projects that

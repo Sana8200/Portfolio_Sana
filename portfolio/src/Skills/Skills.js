@@ -27,7 +27,6 @@ function Skills() {
     <section id="skills" className="skills">
       <div className="container">
         <Reveal>
-          <p className="sec-marker sec-marker--teal">// 03 skills</p>
           <h2 className="sec-title">What I work with</h2>
         </Reveal>
 

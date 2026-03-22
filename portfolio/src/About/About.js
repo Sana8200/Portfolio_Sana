@@ -18,7 +18,6 @@ function About() {
       </div>
       <div className="container">
         <Reveal>
-          <p className="sec-marker sec-marker--rust">// 01 about</p>
           <h2 className="sec-title">A bit about me</h2>
         </Reveal>
 
