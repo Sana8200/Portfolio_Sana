@@ -65,7 +65,7 @@ const PROJECTS = [
     title: 'LeafKeeper',
     num: '02',
     images: ['/images/leafkeeper-app.png', '/images/leafkeeper-landing.png'],
-    desc: 'Designed UI/UX and developed full-stack functionality in a 3-person team. Built the front end with React and JavaScript, integrated backend via REST APIs. A digital gardening companion for plant collections and care tracking.',
+    desc: 'A digital gardening companion for plant collections and care tracking. Built as a 3-person team — I designed the UI/UX and developed the React front end, integrating it with a REST API backend.',
     tags: ['React', 'JavaScript', 'REST APIs'],
     demo: 'https://group-11-57e70.web.app/',
     color: 'sage',
@@ -73,7 +73,7 @@ const PROJECTS = [
   {
     title: 'OS & Concurrent Programming',
     num: '03',
-    desc: 'Implemented process and thread management, scheduling algorithms, and synchronization primitives in C. Built multi-threaded applications in Java exploring concurrency patterns, thread-safe data structures, and classic problems like dining philosophers.',
+    desc: 'Implemented process and thread management, scheduling algorithms, and synchronization primitives in C. Built multi-threaded applications in Java exploring concurrency patterns, thread-safe data structures, and classic problems like the dining philosophers.',
     tags: ['C', 'Java', 'OS', 'Concurrency'],
     link: 'https://github.com/Sana8200',
     color: 'mauve',
@@ -81,7 +81,7 @@ const PROJECTS = [
   {
     title: 'Socket Programming',
     num: '04',
-    desc: 'Built a TCP client, HTTP echo server, and multi-threaded HTTP server in Java. Gained hands-on experience with network protocols, socket programming, and concurrent request handling.',
+    desc: 'Built a TCP client, an HTTP echo server, and a multi-threaded HTTP server in Java — working directly with network protocols, socket APIs, and concurrent request handling.',
     tags: ['Java', 'TCP/UDP', 'Networking'],
     link: 'https://github.com/Sana8200',
     color: 'amber',
@@ -89,7 +89,7 @@ const PROJECTS = [
   {
     title: 'Digital Design & Embedded',
     num: '05',
-    desc: 'Designed and implemented combinational and sequential logic circuits, programmed hardware interfaces for sensors and displays. Served as lab assistant for this course at KTH.',
+    desc: 'Designed and implemented combinational and sequential logic circuits, and programmed hardware interfaces for sensors and displays. Now serve as a lab assistant for this course at KTH.',
     tags: ['Embedded', 'Digital Logic'],
     link: 'https://github.com/Sana8200',
     color: 'rust',
