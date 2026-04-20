@@ -140,7 +140,8 @@ function Hero() {
           <motion.div custom={2} variants={fadeUp} initial="hidden" animate="visible">
             <p className="hero__desc">
               ICT Engineering student at KTH Royal Institute of Technology, Stockholm.
-              Building thoughtful systems — from embedded hardware to full-stack applications.
+              I build across the stack — from embedded firmware in C and Assembly to
+              full-stack web apps in React.
             </p>
           </motion.div>
 

@@ -26,22 +26,16 @@ function About() {
             <div className="about__prose">
               <p>
                 I'm a <strong>third-year ICT Engineering student</strong> at{' '}
-                <span className="about__accent">KTH Royal Institute of Technology</span> in Stockholm.
-                My coursework spans everything from low-level systems programming in C and Assembly
-                to full-stack web development with React and REST APIs — and I genuinely enjoy
-                working across that entire spectrum.
+                <span className="about__accent">KTH Royal Institute of Technology</span> in Stockholm,
+                drawn to work that sits between hardware and software — from embedded firmware
+                in C and Assembly to full-stack applications in React.
               </p>
               <p>
-                At KTH I work as a <strong>Programming Lab Assistant</strong>, helping students
-                debug code and build their understanding of core CS concepts in weekly lab
-                sessions, and as a <strong>Digital Design Lab Assistant</strong>, guiding them
-                through circuit design and hardware interfaces. I also serve as an{' '}
-                <strong>International Student Ambassador</strong> for the EECS school, representing
-                KTH and advising prospective international students.
-              </p>
-              <p>
-                What ties it all together is that I like understanding how things work at every
-                level — and building software that actually solves problems.
+                Alongside my studies, I'm a <strong>Programming</strong> and{' '}
+                <strong>Digital Design Lab Assistant</strong> at KTH, and an{' '}
+                <strong>International Student Ambassador</strong> for the EECS school. What I
+                enjoy most is understanding how things work at every level — and building
+                software that actually solves problems.
               </p>
             </div>
           </Reveal>

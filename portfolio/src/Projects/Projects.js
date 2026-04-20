@@ -95,11 +95,12 @@ const PROJECTS = [
     color: 'rust',
   },
   {
-    title: 'Database Design & Analytics',
+    title: 'Soundgood Music School Database',
     num: '06',
-    desc: 'Designed and implemented a PostgreSQL database for a music school in a 3-person team. Performed SQL-based data analysis and compared processing solutions for performance and scalability.',
-    tags: ['PostgreSQL', 'SQL', 'Data Analytics'],
-    link: 'https://github.com/Sana8200',
+    images: ['/images/soundgood-er.png'],
+    imgClass: 'proj__img--screenshot',
+    desc: 'Designed and implemented a PostgreSQL database for a fictional music school in a 3-person team, modeling the full business domain — students, instructors, lesson types (individual, group, ensemble), instrument rentals, and a flexible pricing scheme with sibling discounts. Built the ER model in Astah and wrote the schema, constraints, and queries in SQL.',
+    tags: ['PostgreSQL', 'SQL', 'ER Modeling', 'Astah'],
     color: 'sage',
   },
   {
@@ -125,8 +126,8 @@ function Projects() {
         <Reveal>
           <h2 className="sec-title">Selected work</h2>
           <p className="sec-desc">
-            From embedded systems to full-stack web apps — projects that
-            reflect how I think and build.
+            A cross-section of what I've been building — from embedded systems
+            to full-stack web apps.
           </p>
         </Reveal>
 
