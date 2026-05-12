@@ -55,12 +55,6 @@ function About() {
                 <p className="about__card-meta">2025 – 2026 / Stockholm</p>
               </div>
             </Reveal>
-            <Reveal delay={4}>
-              <div className="about__card about__card--sage">
-                <p className="about__card-label">Status</p>
-                <p className="about__card-value">Available for full-time internship</p>
-              </div>
-            </Reveal>
             <Reveal delay={5}>
               <div className="about__card about__card--mauve">
                 <p className="about__card-label">Languages</p>

@@ -6,13 +6,13 @@ const SKILL_CATS = [
     label: 'lang',
     title: 'Languages',
     color: 'rust',
-    items: ['Python', 'Java', 'JavaScript', 'C', 'SQL', 'HTML/CSS', 'Assembly'],
+    items: ['Python', 'Java', 'JavaScript', 'TypeScript', 'C', 'SQL', 'HTML/CSS', 'Assembly'],
   },
   {
     label: 'tools',
     title: 'Frameworks & Tools',
     color: 'teal',
-    items: ['React', 'Git', 'Docker', 'Linux', 'PostgreSQL', 'Google Workspace'],
+    items: ['React', 'Vite', 'Mantine UI', 'Supabase', 'Git', 'Docker', 'Linux', 'PostgreSQL', 'Google Workspace'],
   },
   {
     label: 'concepts',

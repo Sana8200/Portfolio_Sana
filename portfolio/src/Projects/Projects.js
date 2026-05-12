@@ -2,9 +2,18 @@ import { useState } from 'react';
 import { Reveal } from '../hooks/useReveal';
 import './Projects.css';
 
-function ImageSlider({ images, alt, color, imgClass }) {
+function ImageSlider({ images, alt, color, imgClass, sideBySide }) {
   const [current, setCurrent] = useState(0);
   if (!images || images.length === 0) return null;
+  if (sideBySide) {
+    return (
+      <div className="proj__media proj__media--side-by-side">
+        {images.map((src, i) => (
+          <img key={i} src={src} alt={`${alt} ${i + 1}`} className={`proj__img proj__img--half ${imgClass || ''}`} />
+        ))}
+      </div>
+    );
+  }
   if (images.length === 1) {
     return (
       <div className="proj__media">
@@ -16,7 +25,7 @@ function ImageSlider({ images, alt, color, imgClass }) {
     <div className="proj__media proj__media--slider">
       <div className="proj__slides" style={{ transform: `translateX(-${current * 100}%)` }}>
         {images.map((src, i) => (
-          <img key={i} src={src} alt={`${alt} ${i + 1}`} className="proj__img proj__slide" />
+          <img key={i} src={src} alt={`${alt} ${i + 1}`} className={`proj__img proj__slide ${imgClass || ''}`} />
         ))}
       </div>
       <button
@@ -64,7 +73,7 @@ const PROJECTS = [
   {
     title: 'LeafKeeper',
     num: '02',
-    images: ['/images/leafkeeper-app.png', '/images/leafkeeper-landing.png'],
+    images: ['/images/leafkeeper-landing.png','/images/leafkeeper-app.png'],
     desc: 'A digital gardening companion for plant collections and care tracking. Built as a 3-person team — I designed the UI/UX and developed the React front end, integrating it with a REST API backend.',
     tags: ['React', 'JavaScript', 'REST APIs'],
     demo: 'https://group-11-57e70.web.app/',
@@ -106,12 +115,27 @@ const PROJECTS = [
     color: 'sage',
   },
   {
-    title: 'Digital Design & Embedded',
+    title: 'Digital Design & Embedded Electronics',
     num: '07',
+    images: ['/images/digital design.JPG', '/images/digital designn.jpg'],
+    imgClass: 'proj__img--fit',
+    sideBySide: true,
     desc: 'Designed and implemented combinational and sequential logic circuits, and programmed hardware interfaces for sensors and displays. Now serve as a lab assistant for this course at KTH.',
     tags: ['Embedded', 'Digital Logic'],
     link: 'https://github.com/Sana8200',
     color: 'rust',
+  },
+  {
+    title: 'HouseBite',
+    num: '08',
+    images: ['/images/HOUSE_BITE.png'],
+    imgClass: 'proj__img--screenshot',
+    desc: 'Built in a team of 7 following Scrum — HouseBite is a PWA that turns households into a shared smart pantry. Track groceries and expiry dates, get recipe suggestions from what you already have, scan receipts via OCR to log purchases automatically, and manage a shared grocery budget across household members.',
+    tags: ['React', 'TypeScript', 'Supabase', 'PostgreSQL', 'PWA'],
+    link: 'https://github.com/Sana8200/HouseBite',
+    demo: 'https://arpega75.github.io/houseBite/',
+    open_app: 'https://housebite.app/',
+    color: 'teal',
   },
 ];
 
@@ -135,7 +159,7 @@ function Projects() {
           {PROJECTS.map((p, i) => (
             <Reveal key={i} delay={i < 3 ? i + 1 : 1}>
               <article className={`proj proj--${p.color} ${!p.images ? 'proj--no-img' : ''}`}>
-                <ImageSlider images={p.images} alt={p.title} color={p.color} imgClass={p.imgClass} />
+                <ImageSlider images={p.images} alt={p.title} color={p.color} imgClass={p.imgClass} sideBySide={p.sideBySide} />
                 <div className="proj__body">
                   <div className="proj__header">
                     <span className="proj__num">{p.num}</span>
