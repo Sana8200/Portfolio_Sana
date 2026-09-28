@@ -1,6 +1,6 @@
 .contact {
-  padding: 4rem 0;
-  padding-top: 9rem;
+  padding: 3.5rem 0;
+  padding-top: 7rem;
   background: var(--charcoal);
   position: relative;
   overflow: hidden;
@@ -12,7 +12,7 @@
   top: 0;
   left: 0;
   right: 0;
-  height: 300px;
+  height: 200px;
   background: linear-gradient(
     to bottom,
     var(--bg) 0%,
@@ -65,7 +65,6 @@
   gap: 0.75rem;
   justify-content: center;
   flex-wrap: wrap;
-  margin-bottom: 2.5rem;
 }
 
 /* Override outline button for dark section */
@@ -80,6 +79,6 @@
 }
 
 @media (max-width: 600px) {
-  .contact { padding: 4rem 0; padding-top: 10rem; }
-  .contact::before { height: 180px; }
+  .contact { padding: 3.5rem 0; padding-top: 7rem; }
+  .contact::before { height: 160px; }
 }

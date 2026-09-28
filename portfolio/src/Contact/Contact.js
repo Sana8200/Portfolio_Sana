@@ -12,8 +12,9 @@ function Contact() {
               Let's <em>connect</em>
             </h2>
             <p className="contact__desc">
-              Internship opportunity, project idea, or just a conversation about
-              engineering — I'd love to hear from you.
+              I'm looking for a thesis project and internships in 2027, in embedded
+              systems or software engineering. If your team has something in mind,
+              I'd love to hear from you.
             </p>
             <div className="contact__buttons">
               <a href={SOCIALS.find(s => s.label === 'Email').url} className="btn btn--gradient">Say hello</a>

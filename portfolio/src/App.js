@@ -1,7 +1,7 @@
 import Navbar from './Navbar/Navbar';
 import Hero from './Hero/Hero';
-import Marquee from './Marquee/Marquee';
 import About from './About/About';
+import Experience from './Experience/Experience';
 import Projects from './Projects/Projects';
 import Skills from './Skills/Skills';
 import Contact from './Contact/Contact';
@@ -12,8 +12,8 @@ function App() {
     <>
       <Navbar />
       <Hero />
-      <Marquee />
       <About />
+      <Experience />
       <Projects />
       <Skills />
       <Contact />

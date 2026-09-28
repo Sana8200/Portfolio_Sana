@@ -1,0 +1,114 @@
+.exp {
+  padding: 3rem 0 1.5rem;
+  background: var(--bg);
+  position: relative;
+}
+
+/* Featured role */
+.exp__card {
+  padding: 1.5rem 1.75rem;
+  background: linear-gradient(135deg, var(--bg-card) 55%, rgba(192,98,58,0.08));
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--rust);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+}
+
+.exp__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.5rem 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.75rem;
+}
+.exp__role {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  font-weight: 400;
+  color: var(--text);
+  letter-spacing: -0.2px;
+}
+.exp__org {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--rust);
+  margin-top: 0.1rem;
+}
+.exp__period {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--text-dim);
+  white-space: nowrap;
+}
+
+.exp__points {
+  list-style: none;
+  margin-bottom: 1rem;
+}
+.exp__points li {
+  position: relative;
+  padding-left: 1rem;
+  font-size: 0.88rem;
+  line-height: 1.7;
+  color: var(--text-mid);
+}
+.exp__points li::before {
+  content: '–';
+  position: absolute;
+  left: 0;
+  color: var(--text-dim);
+}
+
+.exp__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+.exp__tag {
+  padding: 4px 10px;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  font-weight: 500;
+  color: var(--rust);
+  background: var(--rust-soft);
+}
+
+/* Other roles — one line each */
+.exp__roles {
+  list-style: none;
+  margin-top: 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: var(--bg-card);
+}
+.exp__row {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  align-items: baseline;
+  gap: 1.5rem;
+  padding: 0.9rem 1.75rem;
+}
+.exp__row + .exp__row {
+  border-top: 1px solid var(--border);
+}
+.exp__row-role {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text);
+}
+.exp__row-org {
+  font-size: 0.82rem;
+  color: var(--text-mid);
+}
+
+@media (max-width: 600px) {
+  .exp__card { padding: 1.25rem; }
+  .exp__row {
+    grid-template-columns: 1fr auto;
+    gap: 0.15rem 1rem;
+    padding: 0.85rem 1.25rem;
+  }
+  .exp__row-role { grid-column: 1 / -1; }
+}

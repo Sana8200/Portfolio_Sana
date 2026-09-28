@@ -2,14 +2,14 @@ import { useState } from 'react';
 import { Reveal } from '../hooks/useReveal';
 import './Projects.css';
 
-function ImageSlider({ images, alt, color, imgClass, sideBySide }) {
+function ImageSlider({ images, alt, imgClass, sideBySide }) {
   const [current, setCurrent] = useState(0);
   if (!images || images.length === 0) return null;
   if (sideBySide) {
     return (
       <div className="proj__media proj__media--side-by-side">
         {images.map((src, i) => (
-          <img key={i} src={src} alt={`${alt} ${i + 1}`} className={`proj__img proj__img--half ${imgClass || ''}`} />
+          <img key={i} src={src} alt={`${alt} ${i + 1}`} loading="lazy" className={`proj__img proj__img--half ${imgClass || ''}`} />
         ))}
       </div>
     );
@@ -17,7 +17,7 @@ function ImageSlider({ images, alt, color, imgClass, sideBySide }) {
   if (images.length === 1) {
     return (
       <div className="proj__media">
-        <img src={images[0]} alt={alt} className={`proj__img ${imgClass || ''}`} />
+        <img src={images[0]} alt={alt} loading="lazy" className={`proj__img ${imgClass || ''}`} />
       </div>
     );
   }
@@ -25,11 +25,11 @@ function ImageSlider({ images, alt, color, imgClass, sideBySide }) {
     <div className="proj__media proj__media--slider">
       <div className="proj__slides" style={{ transform: `translateX(-${current * 100}%)` }}>
         {images.map((src, i) => (
-          <img key={i} src={src} alt={`${alt} ${i + 1}`} className={`proj__img proj__slide ${imgClass || ''}`} />
+          <img key={i} src={src} alt={`${alt} ${i + 1}`} loading="lazy" className={`proj__img proj__slide ${imgClass || ''}`} />
         ))}
       </div>
       <button
-        className={`proj__arrow proj__arrow--left proj__arrow--${color}`}
+        className="proj__arrow proj__arrow--left"
         onClick={() => setCurrent((current - 1 + images.length) % images.length)}
         aria-label="Previous image"
       >
@@ -38,7 +38,7 @@ function ImageSlider({ images, alt, color, imgClass, sideBySide }) {
         </svg>
       </button>
       <button
-        className={`proj__arrow proj__arrow--right proj__arrow--${color}`}
+        className="proj__arrow proj__arrow--right"
         onClick={() => setCurrent((current + 1) % images.length)}
         aria-label="Next image"
       >
@@ -50,7 +50,7 @@ function ImageSlider({ images, alt, color, imgClass, sideBySide }) {
         {images.map((_, i) => (
           <button
             key={i}
-            className={`proj__dot ${i === current ? 'proj__dot--active' : ''} proj__dot--${color}`}
+            className={`proj__dot ${i === current ? 'proj__dot--active' : ''}`}
             onClick={() => setCurrent(i)}
             aria-label={`Go to image ${i + 1}`}
           />
@@ -60,86 +60,87 @@ function ImageSlider({ images, alt, color, imgClass, sideBySide }) {
   );
 }
 
+const GITHUB = 'https://github.com/Sana8200';
+
 const PROJECTS = [
   {
+    title: 'HouseBite',
+    images: ['/images/HOUSE_BITE.png'],
+    imgClass: 'proj__img--screenshot',
+    desc: 'A PWA that turns a household into a shared smart pantry — grocery and expiry tracking, recipe suggestions, OCR receipt scanning, and a shared budget. Team of 7, Scrum.',
+    role: 'Household management, Google sign-in, the app-wide notification and error system, and Supabase schema work.',
+    tags: ['React', 'TypeScript', 'Supabase', 'PostgreSQL'],
+    links: [
+      { label: 'Code', url: `${GITHUB}/HouseBite` },
+      { label: 'Live app', url: 'https://housebite.app/', demo: true },
+    ],
+  },
+  {
     title: 'FingerOscilloscope',
-    num: '01',
     images: ['/images/oscilloscope-hardware.jpg', '/images/oscilloscope-screen.jpg'],
-    desc: 'Built a real-time digital oscilloscope on a DE10-Lite FPGA using a RISC-V processor and 16-bit ADC. Implemented VGA waveform display (320\u00d7240) with run/stop, zoom/pan, and dual-mode operation. Firmware in C and Assembly for SPI and ADC data acquisition.',
-    tags: ['C', 'Assembly', 'SPI', 'VGA'],
-    link: 'https://github.com/Sana8200/FingerOscilloscope',
-    color: 'rust',
+    desc: 'A real-time oscilloscope on the DE10-Lite board. C and Assembly firmware on a RISC-V soft-core reads a 16-bit ADC over SPI and draws live waveforms on a VGA display, with adjustable gain (1–8×) and sample rate (50–500 Hz).',
+    tags: ['C', 'Assembly', 'RISC-V', 'SPI'],
+    links: [{ label: 'Code', url: `${GITHUB}/FingerOscilloscope` }],
   },
   {
     title: 'LeafKeeper',
-    num: '02',
-    images: ['/images/leafkeeper-landing.png','/images/leafkeeper-app.png'],
-    desc: 'A digital gardening companion for plant collections and care tracking. Built as a 3-person team — I designed the UI/UX and developed the React front end, integrating it with a REST API backend.',
+    images: ['/images/leafkeeper-landing.png', '/images/leafkeeper-app.png'],
+    desc: 'A plant-care tracking app built in a team of 3. I designed the UI/UX and built the React front end on top of a REST API.',
     tags: ['React', 'JavaScript', 'REST APIs'],
-    demo: 'https://group-11-57e70.web.app/',
-    color: 'sage',
+    links: [{ label: 'Live demo', url: 'https://group-11-57e70.web.app/', demo: true }],
   },
   {
-    title: 'OS & Concurrent Programming',
-    num: '03',
-    desc: 'Implemented process and thread management, scheduling algorithms, and synchronization primitives in C. Built multi-threaded applications in Java exploring concurrency patterns, thread-safe data structures, and classic problems like the dining philosophers.',
-    tags: ['C', 'Java', 'OS', 'Concurrency'],
-    link: 'https://github.com/Sana8200',
-    color: 'mauve',
-  },
-  {
-    title: 'Socket Programming',
-    num: '04',
-    desc: 'Built a TCP client, an HTTP echo server, and a multi-threaded HTTP server in Java — working directly with network protocols, socket APIs, and concurrent request handling.',
-    tags: ['Java', 'TCP/UDP', 'Networking'],
-    link: 'https://github.com/Sana8200',
-    color: 'amber',
-  },
-  {
-    title: 'Portfolio Website',
-    num: '05',
-    images: ['/images/portfolio-project.png'],
-    imgClass: 'proj__img--screenshot',
-    desc: 'Designed and built this portfolio from scratch — a warm, typography-driven site with animated light beams, smooth section transitions, scroll-reveal animations, and a custom design system.',
-    tags: ['React', 'CSS', 'Framer Motion'],
-    link: 'https://github.com/Sana8200',
-    color: 'rust',
-  },
-  {
-    title: 'Soundgood Music School Database',
-    num: '06',
+    title: 'Soundgood Database',
     images: ['/images/soundgood-er.png'],
     imgClass: 'proj__img--screenshot',
-    desc: 'Designed and implemented a PostgreSQL database for a fictional music school in a 3-person team, modeling the full business domain — students, instructors, lesson types (individual, group, ensemble), instrument rentals, and a flexible pricing scheme with sibling discounts. Built the ER model in Astah and wrote the schema, constraints, and queries in SQL.',
-    tags: ['PostgreSQL', 'SQL', 'ER Modeling', 'Astah'],
-    color: 'sage',
-  },
-  {
-    title: 'Digital Design & Embedded Electronics',
-    num: '07',
-    images: ['/images/digital design.JPG', '/images/digital designn.jpg'],
-    imgClass: 'proj__img--fit',
-    sideBySide: true,
-    desc: 'Designed and implemented combinational and sequential logic circuits, and programmed hardware interfaces for sensors and displays. Now serve as a lab assistant for this course at KTH.',
-    tags: ['Embedded', 'Digital Logic'],
-    link: 'https://github.com/Sana8200',
-    color: 'rust',
-  },
-  {
-    title: 'HouseBite',
-    num: '08',
-    images: ['/images/HOUSE_BITE.png'],
-    imgClass: 'proj__img--screenshot',
-    desc: 'Built in a team of 7 following Scrum — HouseBite is a PWA that turns households into a shared smart pantry. Track groceries and expiry dates, get recipe suggestions from what you already have, scan receipts via OCR to log purchases automatically, and manage a shared grocery budget across household members.',
-    tags: ['React', 'TypeScript', 'Supabase', 'PostgreSQL', 'PWA'],
-    link: 'https://github.com/Sana8200/HouseBite',
-    demo: 'https://arpega75.github.io/houseBite/',
-    open_app: 'https://housebite.app/',
-    color: 'teal',
+    desc: 'A PostgreSQL database for a music school, built in a team of 3 — ER model in Astah, then the schema, constraints and queries in SQL, covering lessons, instrument rentals and sibling-discount pricing.',
+    tags: ['PostgreSQL', 'SQL', 'ER Modeling'],
+    links: [],
   },
 ];
 
+// Smaller work, collapsed by default to keep the page short
+const MORE = [
+  {
+    name: 'Digital Design & Embedded Electronics',
+    detail: 'Combinational and sequential logic circuits, plus hardware interfaces for sensors and displays. Now a lab assistant for the course.',
+  },
+  {
+    name: 'Concurrent Programming',
+    detail: 'Locks, barriers, semaphores and monitors with pthreads and Java; OpenMP; MPI message passing.',
+    url: `${GITHUB}/Concurrent-Programming`,
+  },
+  {
+    name: 'Computer Organization (IS1200)',
+    detail: 'RISC-V assembly, C, I/O programming, and processor design.',
+    url: `${GITHUB}/Datorteknik-IS1200`,
+  },
+  {
+    name: 'Socket Programming',
+    detail: 'TCP client, HTTP echo server, and a multi-threaded HTTP server in Java.',
+    url: `${GITHUB}/Socket-Programming`,
+  },
+  {
+    name: 'Operating Systems',
+    detail: 'Process and thread management, scheduling algorithms, and synchronization primitives in C.',
+  },
+];
+
+const ArrowIcon = () => (
+  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M7 17L17 7M17 7H7M17 7v10"/>
+  </svg>
+);
+
+const PlayIcon = () => (
+  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/>
+  </svg>
+);
+
 function Projects() {
+  const [showMore, setShowMore] = useState(false);
+
   return (
     <section id="projects" className="projects">
       <div className="color-wash">
@@ -149,52 +150,80 @@ function Projects() {
       <div className="container">
         <Reveal>
           <h2 className="sec-title">Selected work</h2>
-          <p className="sec-desc">
-            A cross-section of what I've been building — from embedded systems
-            to full-stack web apps.
-          </p>
         </Reveal>
 
         <div className="projects__grid">
           {PROJECTS.map((p, i) => (
-            <Reveal key={i} delay={i < 3 ? i + 1 : 1}>
-              <article className={`proj proj--${p.color} ${!p.images ? 'proj--no-img' : ''}`}>
-                <ImageSlider images={p.images} alt={p.title} color={p.color} imgClass={p.imgClass} sideBySide={p.sideBySide} />
+            <Reveal key={p.title} delay={(i % 2) + 1}>
+              <article className="proj">
+                <ImageSlider images={p.images} alt={p.title} imgClass={p.imgClass} sideBySide={p.sideBySide} />
                 <div className="proj__body">
                   <div className="proj__header">
-                    <span className="proj__num">{p.num}</span>
+                    <span className="proj__num">{String(i + 1).padStart(2, '0')}</span>
                     <h3 className="proj__title">{p.title}</h3>
                   </div>
                   <p className="proj__desc">{p.desc}</p>
+                  {p.role && (
+                    <p className="proj__role">
+                      <span className="proj__role-label">My part</span>
+                      {p.role}
+                    </p>
+                  )}
                   <div className="proj__footer">
                     <div className="proj__tags">
                       {p.tags.map((tag) => (
                         <span key={tag} className="proj__tag">{tag}</span>
                       ))}
                     </div>
-                    <div className="proj__links">
-                      {p.link && (
-                        <a href={p.link} target="_blank" rel="noopener noreferrer" className="proj__link">
-                          View project
-                          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                            <path d="M7 17L17 7M17 7H7M17 7v10"/>
-                          </svg>
-                        </a>
-                      )}
-                      {p.demo && (
-                        <a href={p.demo} target="_blank" rel="noopener noreferrer" className="proj__link proj__link--demo">
-                          Live demo
-                          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                            <circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/>
-                          </svg>
-                        </a>
-                      )}
-                    </div>
+                    {p.links.length > 0 && (
+                      <div className="proj__links">
+                        {p.links.map((l) => (
+                          <a
+                            key={l.url}
+                            href={l.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className={`proj__link ${l.demo ? 'proj__link--demo' : ''}`}
+                          >
+                            {l.label}
+                            {l.demo ? <PlayIcon /> : <ArrowIcon />}
+                          </a>
+                        ))}
+                      </div>
+                    )}
                   </div>
                 </div>
               </article>
             </Reveal>
           ))}
+        </div>
+
+        <div className="more">
+          <button
+            className="more__toggle"
+            onClick={() => setShowMore((v) => !v)}
+            aria-expanded={showMore}
+            aria-controls="more-work"
+          >
+            {showMore ? 'Hide' : 'Show'} {MORE.length} more — coursework & labs
+            <svg className={`more__chevron ${showMore ? 'more__chevron--open' : ''}`} width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M6 9l6 6 6-6"/>
+            </svg>
+          </button>
+          <ul id="more-work" className="more__list" hidden={!showMore}>
+            {MORE.map((m) => (
+              <li key={m.name} className="more__item">
+                {m.url ? (
+                  <a href={m.url} target="_blank" rel="noopener noreferrer" className="more__name more__name--link">
+                    {m.name} <ArrowIcon />
+                  </a>
+                ) : (
+                  <span className="more__name">{m.name}</span>
+                )}
+                <span className="more__detail">{m.detail}</span>
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
     </section>
