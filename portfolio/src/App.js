@@ -4,19 +4,20 @@ import About from './About/About';
 import Experience from './Experience/Experience';
 import Projects from './Projects/Projects';
 import Skills from './Skills/Skills';
-import Contact from './Contact/Contact';
 import Footer from './Footer/Footer';
 
 function App() {
   return (
     <>
+      <a href="#main" className="skip-link">Skip to content</a>
       <Navbar />
-      <Hero />
-      <About />
-      <Experience />
-      <Projects />
-      <Skills />
-      <Contact />
+      <main id="main">
+        <Hero />
+        <About />
+        <Experience />
+        <Projects />
+        <Skills />
+      </main>
       <Footer />
     </>
   );

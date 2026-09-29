@@ -62,7 +62,7 @@
   border: 1px solid var(--border);
   transition: all 0.2s;
 }
-.skills__pill:hover { color: var(--rust); border-color: var(--rust-mid); background: var(--rust-soft); }
+.skills__pill:hover { color: var(--rust-text); border-color: var(--rust-mid); background: var(--rust-soft); }
 
 @media (max-width: 600px) {
   .skills { padding: 4rem 0; }

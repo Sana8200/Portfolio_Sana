@@ -2,22 +2,14 @@ import { useState } from 'react';
 import { Reveal } from '../hooks/useReveal';
 import './Projects.css';
 
-function ImageSlider({ images, alt, imgClass, sideBySide }) {
+function ImageSlider({ images, alts = [], alt, imgClass }) {
   const [current, setCurrent] = useState(0);
   if (!images || images.length === 0) return null;
-  if (sideBySide) {
-    return (
-      <div className="proj__media proj__media--side-by-side">
-        {images.map((src, i) => (
-          <img key={i} src={src} alt={`${alt} ${i + 1}`} loading="lazy" className={`proj__img proj__img--half ${imgClass || ''}`} />
-        ))}
-      </div>
-    );
-  }
+  const altFor = (i) => alts[i] || `${alt} ${i + 1}`;
   if (images.length === 1) {
     return (
       <div className="proj__media">
-        <img src={images[0]} alt={alt} loading="lazy" className={`proj__img ${imgClass || ''}`} />
+        <img src={images[0]} alt={altFor(0)} loading="lazy" className={`proj__img ${imgClass || ''}`} />
       </div>
     );
   }
@@ -25,7 +17,7 @@ function ImageSlider({ images, alt, imgClass, sideBySide }) {
     <div className="proj__media proj__media--slider">
       <div className="proj__slides" style={{ transform: `translateX(-${current * 100}%)` }}>
         {images.map((src, i) => (
-          <img key={i} src={src} alt={`${alt} ${i + 1}`} loading="lazy" className={`proj__img proj__slide ${imgClass || ''}`} />
+          <img key={i} src={src} alt={altFor(i)} loading="lazy" className={`proj__img proj__slide ${imgClass || ''}`} />
         ))}
       </div>
       <button
@@ -65,9 +57,10 @@ const GITHUB = 'https://github.com/Sana8200';
 const PROJECTS = [
   {
     title: 'HouseBite',
-    images: ['/images/HOUSE_BITE.png'],
+    images: ['/images/HOUSE_BITE.webp'],
+    alts: ['HouseBite dashboard with household overview, pantry, receipt scanning, and recipes'],
     imgClass: 'proj__img--screenshot',
-    desc: 'A PWA that turns a household into a shared smart pantry — grocery and expiry tracking, recipe suggestions, OCR receipt scanning, and a shared budget. Team of 7, Scrum.',
+    desc: 'A PWA that turns a household into a shared smart pantry — grocery and expiry tracking, recipe suggestions, OCR receipt scanning, and a shared budget. Built in a team of 7 using Scrum.',
     role: 'Household management, Google sign-in, the app-wide notification and error system, and Supabase schema work.',
     tags: ['React', 'TypeScript', 'Supabase', 'PostgreSQL'],
     links: [
@@ -77,23 +70,33 @@ const PROJECTS = [
   },
   {
     title: 'FingerOscilloscope',
-    images: ['/images/oscilloscope-hardware.jpg', '/images/oscilloscope-screen.jpg'],
+    images: ['/images/oscilloscope-hardware.webp', '/images/oscilloscope-screen.webp'],
+    alts: [
+      'DE10-Lite board wired to an ADC module on a breadboard',
+      'VGA monitor showing a captured waveform with voltage and min/max readouts',
+    ],
     desc: 'A real-time oscilloscope on the DE10-Lite board. C and Assembly firmware on a RISC-V soft-core reads a 16-bit ADC over SPI and draws live waveforms on a VGA display, with adjustable gain (1–8×) and sample rate (50–500 Hz).',
     tags: ['C', 'Assembly', 'RISC-V', 'SPI'],
     links: [{ label: 'Code', url: `${GITHUB}/FingerOscilloscope` }],
   },
   {
     title: 'LeafKeeper',
-    images: ['/images/leafkeeper-landing.png', '/images/leafkeeper-app.png'],
-    desc: 'A plant-care tracking app built in a team of 3. I designed the UI/UX and built the React front end on top of a REST API.',
+    images: ['/images/leafkeeper-landing.webp', '/images/leafkeeper-app.webp'],
+    alts: [
+      'LeafKeeper landing page with sign-in options',
+      'LeafKeeper discover page with plant search and trending plants',
+    ],
+    desc: 'A digital gardening companion for plant collections and care tracking. Built in a team of 3.',
+    role: 'Designed the UI/UX and built the React front end, integrated with a REST API backend.',
     tags: ['React', 'JavaScript', 'REST APIs'],
     links: [{ label: 'Live demo', url: 'https://group-11-57e70.web.app/', demo: true }],
   },
   {
     title: 'Soundgood Database',
-    images: ['/images/soundgood-er.png'],
+    images: ['/images/soundgood-er.webp'],
+    alts: ['ER diagram of the Soundgood music school database'],
     imgClass: 'proj__img--screenshot',
-    desc: 'A PostgreSQL database for a music school, built in a team of 3 — ER model in Astah, then the schema, constraints and queries in SQL, covering lessons, instrument rentals and sibling-discount pricing.',
+    desc: 'A PostgreSQL database for a music school, built in a team of 3 — ER model in Astah, then the schema, constraints and queries in SQL, covering lessons, instrument rentals, and sibling-discount pricing.',
     tags: ['PostgreSQL', 'SQL', 'ER Modeling'],
     links: [],
   },
@@ -107,12 +110,12 @@ const MORE = [
   },
   {
     name: 'Concurrent Programming',
-    detail: 'Locks, barriers, semaphores and monitors with pthreads and Java; OpenMP; MPI message passing.',
+    detail: 'Locks, barriers, semaphores, and monitors with pthreads and Java; OpenMP; MPI message passing.',
     url: `${GITHUB}/Concurrent-Programming`,
   },
   {
     name: 'Computer Organization (IS1200)',
-    detail: 'RISC-V assembly, C, I/O programming, and processor design.',
+    detail: 'RISC-V Assembly, C, I/O programming, and processor design.',
     url: `${GITHUB}/Datorteknik-IS1200`,
   },
   {
@@ -156,7 +159,7 @@ function Projects() {
           {PROJECTS.map((p, i) => (
             <Reveal key={p.title} delay={(i % 2) + 1}>
               <article className="proj">
-                <ImageSlider images={p.images} alt={p.title} imgClass={p.imgClass} sideBySide={p.sideBySide} />
+                <ImageSlider images={p.images} alts={p.alts} alt={p.title} imgClass={p.imgClass} />
                 <div className="proj__body">
                   <div className="proj__header">
                     <span className="proj__num">{String(i + 1).padStart(2, '0')}</span>

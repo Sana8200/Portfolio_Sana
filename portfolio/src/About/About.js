@@ -24,13 +24,11 @@ function About() {
         <Reveal delay={1}>
           <div className="about__body">
             <p className="about__lead">
-              I'm a final-year ICT Engineering student at KTH in Stockholm, drawn to
-              work that sits between <em>hardware</em> and <em>software</em>.
+              I'm drawn to work that sits between <em>hardware</em> and <em>software</em>.
             </p>
             <p className="about__text">
-              From embedded firmware in C and Assembly to full-stack applications in
-              React — what I enjoy most is understanding how things work at every
-              level, and building software that actually solves problems.
+              What I enjoy most is understanding how things work at every level — and
+              building software that actually solves problems.
             </p>
 
             <dl className="about__facts">
@@ -44,7 +42,7 @@ function About() {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    Announcement ↗
+                    Announcement (in Swedish) ↗
                   </a>
                 </dd>
               </div>
@@ -52,7 +50,7 @@ function About() {
                 <dt>Languages</dt>
                 <dd className="about__langs">
                   {LANGUAGES.map((l) => (
-                    <span key={l.name} className={`about__lang ${l.native ? 'about__lang--native' : ''} ${l.level ? 'about__lang--beginner' : ''}`}>
+                    <span key={l.name} className={`about__lang ${l.native ? 'about__lang--native' : ''}`}>
                       {l.name}
                       {l.level && <span className="about__lang-level">{l.level}</span>}
                     </span>

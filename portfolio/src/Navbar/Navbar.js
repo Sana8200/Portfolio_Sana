@@ -1,4 +1,5 @@
 import { useState, useEffect, useCallback } from 'react';
+import { SOCIALS } from '../constants/social';
 import './Navbar.css';
 
 const NAV_LINKS = ['About', 'Experience', 'Projects', 'Skills', 'Contact'];
@@ -9,6 +10,7 @@ function Navbar() {
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
+    onScroll(); // page may load already scrolled (refresh, #anchor)
     window.addEventListener('scroll', onScroll);
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
@@ -73,7 +75,7 @@ function Navbar() {
             ))}
           </div>
           <div className="nav-mobile__footer">
-            <a href="mailto:s.monhaserii@gmail.com" className="nav-mobile__cta">
+            <a href={SOCIALS.find((s) => s.label === 'Email').url} className="nav-mobile__cta">
               Say hello →
             </a>
           </div>

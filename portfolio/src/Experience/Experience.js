@@ -4,9 +4,9 @@ import './Experience.css';
 const FEATURED = {
   role: 'Powertrain & Electronics',
   org: 'KTH Formula Student',
-  period: 'Sept 2026 – present',
+  period: 'Sep 2026 – present',
   points: [
-    'Writing STM32 firmware in C, including a CAN bootloader for updating firmware over the CAN bus.',
+    'Writing STM32 firmware in C, including a CAN bootloader so boards can be reflashed over the CAN bus.',
     'Working in KiCad and soldering electronics hardware.',
   ],
   tags: ['C', 'STM32', 'CAN', 'KiCad', 'Soldering'],

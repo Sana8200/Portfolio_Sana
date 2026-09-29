@@ -80,7 +80,7 @@
   font-weight: 500;
   letter-spacing: 1px;
   text-transform: uppercase;
-  color: var(--rust);
+  color: var(--rust-text);
 }
 .about__fact dd {
   font-size: 0.88rem;
@@ -88,7 +88,7 @@
   color: var(--text-mid);
 }
 .about__link {
-  color: var(--rust);
+  color: var(--rust-text);
   font-weight: 500;
   white-space: nowrap;
   border-bottom: 1px solid transparent;
@@ -114,16 +114,12 @@
   font-family: var(--font-mono);
 }
 .about__lang--native {
-  color: var(--rust);
+  color: var(--rust-text);
   background: var(--rust-soft);
-}
-.about__lang--beginner {
-  opacity: 0.6;
 }
 .about__lang-level {
   margin-left: 6px;
   font-size: 0.6rem;
-  opacity: 0.7;
   font-style: italic;
 }
 

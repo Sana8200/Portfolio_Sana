@@ -7,7 +7,7 @@ export const SKILL_CATS = [
   {
     label: 'embedded',
     title: 'Embedded & Hardware',
-    items: ['STM32', 'CAN Bus', 'SPI', 'RISC-V', 'DE10-Lite', 'KiCad', 'Soldering'],
+    items: ['STM32', 'CAN bus', 'SPI', 'RISC-V', 'DE10-Lite', 'KiCad', 'Soldering'],
   },
   {
     label: 'web',

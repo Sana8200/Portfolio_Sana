@@ -3,7 +3,7 @@
    Aesthetic: Warm Terminal Elegance
    ====================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,400&family=JetBrains+Mono:wght@400;500&display=swap');
+/* Fonts are loaded from public/index.html so they don't block rendering */
 
 :root {
   --bg:             #F0E7DD;
@@ -15,27 +15,15 @@
   --rust:           #C0623A;
   --rust-soft:      rgba(192, 98, 58, 0.12);
   --rust-mid:       rgba(192, 98, 58, 0.22);
+  --rust-text:      #9E4C2B; /* rust for small text — passes WCAG AA */
   --coral:          #E07B6A;
-  --sage:           #5E7250;
-  --sage-soft:      rgba(94, 114, 80, 0.12);
-  --sage-mid:       rgba(94, 114, 80, 0.22);
-  --mauve:          #8E6B92;
-  --mauve-soft:     rgba(142, 107, 146, 0.12);
-  --mauve-mid:      rgba(142, 107, 146, 0.22);
-  --amber:          #B8892E;
-  --amber-soft:     rgba(184, 137, 46, 0.12);
-  --amber-mid:      rgba(184, 137, 46, 0.22);
-  --teal:           #4A8E85;
-  --teal-soft:      rgba(74, 142, 133, 0.12);
-  --teal-mid:       rgba(74, 142, 133, 0.22);
-  --rose:           #B86B7A;
   --peach:          #E09A6E;
 
   /* Neutrals */
   --charcoal:       #352D27;
   --text:           #2E2723;
   --text-mid:       #6B5F56;
-  --text-dim:       #9A8E84;
+  --text-dim:       #71655B;
   --border:         #D8CEBF;
   --border-hover:   #C4B5A2;
 
@@ -75,6 +63,37 @@ img { display: block; max-width: 100%; }
 ::selection {
   background: var(--rust-mid);
   color: var(--charcoal);
+}
+
+/* Keyboard focus — visible on both light and dark sections */
+:focus-visible {
+  outline: 2px solid var(--rust);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+.hero :focus-visible,
+.footer :focus-visible,
+.nav :focus-visible {
+  outline-color: var(--peach);
+}
+
+/* Hidden until focused with the keyboard */
+.skip-link {
+  position: fixed;
+  top: 0.75rem;
+  left: 0.75rem;
+  z-index: 10000;
+  padding: 0.6rem 1rem;
+  border-radius: var(--radius-sm);
+  background: var(--bg);
+  color: var(--text);
+  font-size: 0.85rem;
+  font-weight: 500;
+  transform: translateY(-200%);
+  transition: transform 0.2s;
+}
+.skip-link:focus {
+  transform: none;
 }
 
 /* Scroll offset for fixed navbar */
@@ -169,7 +188,7 @@ body::after {
 }
 .btn--outline:hover {
   border-color: var(--rust);
-  color: var(--rust);
+  color: var(--rust-text);
   background: var(--rust-soft);
 }
 
@@ -247,15 +266,6 @@ body::after {
   margin-bottom: 0.75rem;
   line-height: 1.15;
   letter-spacing: -0.5px;
-}
-
-.sec-desc {
-  font-size: 1rem;
-  color: var(--text-mid);
-  max-width: 480px;
-  line-height: 1.7;
-  margin-bottom: 3rem;
-  font-weight: 300;
 }
 
 /* Scroll animations */
