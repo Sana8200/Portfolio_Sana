@@ -141,17 +141,14 @@ const MORE = [
   {
     name: 'Concurrent Programming',
     detail: 'Locks, barriers, semaphores, and monitors with pthreads and Java; OpenMP; MPI message passing.',
-    url: `${GITHUB}/Concurrent-Programming`,
   },
   {
     name: 'Computer Organization (IS1200)',
     detail: 'RISC-V Assembly, C, I/O programming, and processor design.',
-    url: `${GITHUB}/Datorteknik-IS1200`,
   },
   {
     name: 'Socket Programming',
     detail: 'TCP client, HTTP echo server, and a multi-threaded HTTP server in Java.',
-    url: `${GITHUB}/Socket-Programming`,
   },
   {
     name: 'Operating Systems',
