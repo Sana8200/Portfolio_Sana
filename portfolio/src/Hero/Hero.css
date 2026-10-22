@@ -93,26 +93,71 @@
   letter-spacing: 0.5px;
 }
 
+/* Title row, with the optional photo on the right */
+.hero__top {
+  justify-self: stretch;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem 3rem;
+}
+
 /* Title */
 .hero__title {
   font-family: var(--font-heading);
   font-weight: 400;
   margin-bottom: 1.75rem;
 }
+/* Handwritten greeting above the name */
+.hero__hi {
+  display: block;
+  font-family: var(--font-hand);
+  font-size: clamp(1.5rem, 2.4vw, 2rem);
+  font-weight: 500;
+  line-height: 1;
+  color: var(--peach);
+  transform: rotate(-3deg);
+  transform-origin: left bottom;
+  margin: 0 0 0.4rem 0.15rem;
+}
 .hero__name {
   display: block;
-  font-size: clamp(3rem, 8.5vw, 6.5rem);
-  line-height: 0.95;
-  letter-spacing: -0.03em;
+  font-size: clamp(2.5rem, 6vw, 4.75rem);
+  line-height: 1;
+  letter-spacing: -0.025em;
   color: var(--bg);
 }
 .hero__role {
   display: block;
-  margin-top: 0.6rem;
+  margin-top: 0.55rem;
   font-style: italic;
-  font-size: clamp(1.35rem, 3vw, 2.25rem);
+  font-size: clamp(1.25rem, 2.4vw, 1.8rem);
   line-height: 1.2;
   color: var(--peach);
+}
+
+/* Photo */
+.hero__photo {
+  position: relative;
+  flex-shrink: 0;
+  margin-right: 1rem;
+}
+.hero__photo img {
+  width: clamp(150px, 17vw, 220px);
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 0 0 5px var(--charcoal), 0 0 0 7px rgba(224,154,110,0.6), 12px 12px 0 7px rgba(224,154,110,0.18);
+}
+.hero__photo-note {
+  position: absolute;
+  left: -6.2rem;
+  bottom: 0.4rem;
+  font-family: var(--font-hand);
+  font-size: 1.6rem;
+  color: var(--peach);
+  transform: rotate(-8deg);
+  white-space: nowrap;
 }
 
 /* Description + actions row */
@@ -209,11 +254,11 @@
 .scope__caption {
   position: absolute;
   right: max(2rem, calc((100% - 1080px) / 2 + 2rem));
-  top: 0;
-  font-family: var(--font-mono);
-  font-size: 0.62rem;
-  color: rgba(240,231,221,0.5);
-  letter-spacing: 0.3px;
+  top: -0.6rem;
+  font-family: var(--font-hand);
+  font-size: 1.3rem;
+  color: rgba(242,179,138,0.85);
+  transform: rotate(-2deg);
 }
 
 /* Highlights bar */
@@ -279,6 +324,10 @@
 }
 @media (max-width: 600px) {
   .hero__content { padding-top: 2.5rem; }
+  .hero__top { flex-direction: column-reverse; align-items: flex-start; }
+  .hero__photo { margin-right: 0; }
+  .hero__photo img { width: 110px; }
+  .hero__photo-note { left: calc(100% + 0.75rem); bottom: 35%; transform: rotate(-6deg); }
   .hero__actions { width: 100%; }
   .hero__actions .btn { flex: 1; justify-content: center; padding: 14px 20px; }
   .hero__socials { width: 100%; margin-left: 0; }

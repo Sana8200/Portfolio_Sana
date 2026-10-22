@@ -56,11 +56,23 @@ const GITHUB = 'https://github.com/Sana8200';
 
 const PROJECTS = [
   {
+    title: 'CAN Telemetry API',
+    images: ['/images/can-telemetry-cicd.webp', '/images/can-telemetry-architecture.webp'],
+    alts: [
+      'CI/CD diagram: a push to main is linted and tested, smoke-tested in Docker and on Kubernetes, then published to ghcr.io',
+      'Architecture diagram: a client posts CAN frames over HTTPS to a FastAPI service in a locked-down Kubernetes pod, which decodes them and keeps the latest value of each signal in memory',
+    ],
+    imgClass: 'proj__img--contain',
+    desc: 'A FastAPI service that decodes CAN bus frames into physical signals like rpm, temperature and battery voltage, and serves the latest values over HTTP/2 with TLS from a non-root container. It runs on Kubernetes (kind), and a GitHub Actions pipeline lints, tests and smoke-tests every push before publishing the image to ghcr.io.',
+    tags: ['Python', 'FastAPI', 'Docker', 'Kubernetes', 'GitHub Actions'],
+    links: [{ label: 'Code', url: `${GITHUB}/can-telemetry-api` }],
+  },
+  {
     title: 'HouseBite',
     images: ['/images/HOUSE_BITE.webp'],
     alts: ['HouseBite dashboard with household overview, pantry, receipt scanning, and recipes'],
     imgClass: 'proj__img--screenshot',
-    desc: 'A PWA that turns a household into a shared smart pantry — grocery and expiry tracking, recipe suggestions, OCR receipt scanning, and a shared budget. Built in a team of 7 using Scrum.',
+    desc: 'A PWA that turns a household into a shared smart pantry — grocery and expiry tracking, recipe suggestions, receipt scanning with an OpenAI vision model, and a shared budget. Built in a team of 7 using Scrum.',
     role: 'Household management, Google sign-in, the app-wide notification and error system, and Supabase schema work.',
     tags: ['React', 'TypeScript', 'Supabase', 'PostgreSQL'],
     links: [
@@ -80,16 +92,29 @@ const PROJECTS = [
     links: [{ label: 'Code', url: `${GITHUB}/FingerOscilloscope` }],
   },
   {
-    title: 'LeafKeeper',
-    images: ['/images/leafkeeper-landing.webp', '/images/leafkeeper-app.webp'],
+    title: 'pi-assumptions',
+    images: ['/images/pi-assumptions.webp'],
+    alts: ['Terminal running the pi coding agent: while writing rpm.py, the agent flags three assumptions about byte order, scaling, and signedness, each with a confidence level'],
+    imgClass: 'proj__img--contain',
+    desc: 'An extension for the pi coding agent. When a task leaves a detail open, like byte order or units, the agent picks a sensible default, flags it and keeps working. Typing /assumptions lists the flags, and picking a wrong one sends the agent back to fix the code that depended on it.',
+    tags: ['TypeScript', 'AI agents'],
+    links: [{ label: 'Code', url: `${GITHUB}/pi-assumptions` }],
+  },
+  {
+    title: 'PlantPath',
+    images: ['/images/plantpath-start.webp', '/images/plantpath-collections.webp', '/images/plantpath-search.webp'],
     alts: [
-      'LeafKeeper landing page with sign-in options',
-      'LeafKeeper discover page with plant search and trending plants',
+      'PlantPath start page with log in and create account options',
+      'PlantPath collections page with a watering status badge for each plant',
+      'PlantPath search page with trending plants',
     ],
-    desc: 'A digital gardening companion for plant collections and care tracking. Built in a team of 3.',
-    role: 'Designed the UI/UX and built the React front end, integrated with a REST API backend.',
-    tags: ['React', 'JavaScript', 'REST APIs'],
-    links: [{ label: 'Live demo', url: 'https://group-11-57e70.web.app/', demo: true }],
+    desc: 'A web app for discovering houseplants, saving them into collections and tracking when each one needs water. Built in a team of 3. Search no longer returns results because our plant API subscription has ended, so the screenshots show it working.',
+    role: 'Designed the UI/UX and built the React front end, using MobX, Firebase Auth/Firestore and the House Plants API.',
+    tags: ['React', 'JavaScript', 'MobX', 'Firebase'],
+    links: [
+      { label: 'Code', url: `${GITHUB}/PlantPath` },
+      { label: 'Live demo', url: 'https://plantpath-bac3f.web.app/', demo: true },
+    ],
   },
   {
     title: 'Soundgood Database',
@@ -104,6 +129,11 @@ const PROJECTS = [
 
 // Smaller work, collapsed by default to keep the page short
 const MORE = [
+  {
+    name: 'Snake Game',
+    detail: 'Bare-metal C on the DE10-Lite’s RISC-V soft-core: VGA graphics, the score on the 7-segment display, and controls on the board’s buttons and switches.',
+    url: `${GITHUB}/Snake_game`,
+  },
   {
     name: 'Digital Design & Embedded Electronics',
     detail: 'Combinational and sequential logic circuits, plus hardware interfaces for sensors and displays. Now a lab assistant for the course.',

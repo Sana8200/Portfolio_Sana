@@ -13,8 +13,8 @@ const FEATURED = {
 };
 
 const ROLES = [
-  { role: 'Lab Assistant — Programming & Digital Design', org: 'KTH', period: 'Current' },
-  { role: 'International Student Ambassador', org: 'KTH School of EECS', period: 'Current' },
+  { role: 'Lab Assistant — Programming & Digital Design', org: 'KTH', period: 'Aug 2024 – present' },
+  { role: 'International Student Ambassador', org: 'KTH School of EECS', period: 'Aug 2024 – present' },
 ];
 
 function Experience() {

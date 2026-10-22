@@ -23,9 +23,6 @@ function About() {
 
         <Reveal delay={1}>
           <div className="about__body">
-            <p className="about__lead">
-              I'm drawn to work that sits between <em>hardware</em> and <em>software</em>.
-            </p>
             <p className="about__text">
               What I enjoy most is understanding how things work at every level — and
               building software that actually solves problems.

@@ -12,11 +12,11 @@ export const SKILL_CATS = [
   {
     label: 'web',
     title: 'Web & Data',
-    items: ['React', 'Vite', 'Mantine UI', 'Supabase', 'PostgreSQL', 'REST APIs'],
+    items: ['React', 'Vite', 'MobX', 'Mantine UI', 'FastAPI', 'REST APIs', 'Supabase', 'Firebase', 'PostgreSQL', 'UI/UX'],
   },
   {
     label: 'tools',
     title: 'Tools & Concepts',
-    items: ['Git', 'Docker', 'Linux', 'Concurrency', 'OOP', 'Database Design', 'UI/UX'],
+    items: ['Git', 'Docker', 'Kubernetes', 'GitHub Actions', 'pytest', 'Linux', 'Concurrency', 'OOP', 'Database Design'],
   },
 ];

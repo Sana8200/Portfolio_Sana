@@ -3,6 +3,9 @@ import SocialLinks from '../SocialLinks/SocialLinks';
 import Scope from './Scope';
 import './Hero.css';
 
+// Set to the path of a photo in public/images (e.g. '/images/sana.webp') to show it beside the name
+const PHOTO = '/images/sana.webp';
+
 const HIGHLIGHTS = [
   { label: 'Studying', value: 'B.Sc. ICT Engineering', meta: 'KTH · final year' },
   { label: 'Team', value: 'KTH Formula Student', meta: 'Powertrain & Electronics' },
@@ -21,21 +24,33 @@ function Hero() {
   return (
     <section id="hero" className="hero" ref={heroRef}>
       <div className="container hero__content">
-        <div className="hero__badge hero-in hero-in--0">
-          <span className="hero__badge-dot" />
-          <span className="hero__badge-text">open to thesis & internships · 2027</span>
-        </div>
+        <div className="hero__top">
+          <div>
+            <div className="hero__badge hero-in hero-in--0">
+              <span className="hero__badge-dot" />
+              <span className="hero__badge-text">open to thesis & internships · 2027</span>
+            </div>
 
-        <h1 className="hero__title hero-in hero-in--1">
-          <span className="hero__name">Sana Monhaseri</span>
-          <span className="hero__role">Software & Embedded Developer</span>
-        </h1>
+            <h1 className="hero__title hero-in hero-in--1">
+              <span className="hero__hi">hi, I'm</span>
+              <span className="hero__name">Sana Monhaseri</span>
+              <span className="hero__role">Software & Embedded Developer</span>
+            </h1>
+          </div>
+
+          {PHOTO && (
+            <figure className="hero__photo hero-in hero-in--1">
+              <img src={PHOTO} alt="Sana Monhaseri" />
+              <figcaption className="hero__photo-note" aria-hidden="true">that's me!</figcaption>
+            </figure>
+          )}
+        </div>
 
         <div className="hero__row hero-in hero-in--2">
           <p className="hero__desc">
             Final-year ICT Engineering student at KTH in Stockholm. I build across
-            the stack — from embedded firmware in C and Assembly to full-stack web
-            apps in React.
+            the stack — from STM32 firmware in C to Python services on Kubernetes
+            and React web apps.
           </p>
           <div className="hero__actions">
             <a href="#projects" className="btn btn--gradient">View my work</a>
@@ -49,7 +64,7 @@ function Hero() {
         <Scope hostRef={heroRef} />
         <span className="scope__tag scope__tag--ch1" aria-hidden="true">CH1</span>
         <span className="scope__tag scope__tag--ch2" aria-hidden="true">CH2</span>
-        <span className="scope__caption">ch2 decodes to “SANA” in 8-bit ASCII</span>
+        <span className="scope__caption">psst, CH2 spells “SANA” in 8-bit ASCII ♡</span>
       </div>
 
       <ul className="container hero__stats hero-in hero-in--4">

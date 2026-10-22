@@ -31,6 +31,7 @@
   --font-heading:   'DM Serif Display', Georgia, serif;
   --font-body:      'DM Sans', -apple-system, 'Segoe UI', sans-serif;
   --font-mono:      'JetBrains Mono', monospace;
+  --font-hand:      'Caveat', 'Bradley Hand', cursive; /* small handwritten notes */
 
   /* Spacing & Radius */
   --radius:         12px;
@@ -288,6 +289,7 @@ body::after {
 
 /* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
